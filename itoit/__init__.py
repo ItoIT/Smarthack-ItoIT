@@ -19,5 +19,6 @@ Bootstrap(app)
 
 from .Views import homepageView
 from .Views import acteView
-
-
+from .Views import alegeBancaView
+from .Views import capitalBancaView
+from .Views import registruView
