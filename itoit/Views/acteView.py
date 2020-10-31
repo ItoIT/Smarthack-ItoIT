@@ -26,4 +26,13 @@ def acte_post():
             firm.feedback = request.form['feedback']
         db.session.add(firm)
         db.session.commit()
+    elif current_user.trade_register_id is not None:
+        firm = models.Firm.query.filter(models.Firm.id==request.form['firm']).filter(models.Firm.trade_register_id==current_user.trade_register_id).first()
+        if request.form['approve'] is not None:
+            db.session.add(firm)
+            db.session.commit()
+        else:
+            firm.feedback = request.form['feedback']
+        db.session.add(firm)
+        db.session.commit
     return redirect(url_for("acte_get"))
