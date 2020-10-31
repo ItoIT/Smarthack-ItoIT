@@ -1,4 +1,4 @@
-import {getBankList, getUserBank} from "./API/API";
+import {getBankList, getUserBank} from "./API/API.mjs";
 
 function addBank(numeBanca, pdfBanca, idBanca) // functie care adauga in lista de banci o banca
 {
@@ -15,6 +15,7 @@ function addBank(numeBanca, pdfBanca, idBanca) // functie care adauga in lista d
     input.addEventListener('click', function (){
         let downloadButton = document.querySelector("#download-button");
         downloadButton.setAttribute('href', pdfBanca)
+        checkedBank();
     });
     let label = document.createElement("label");
     label.setAttribute("for",numeBanca);
@@ -26,25 +27,28 @@ function addBank(numeBanca, pdfBanca, idBanca) // functie care adauga in lista d
     boxes.appendChild(box);
 }
 
-
-async function createBankList()  // functie care creaza lista de banci in alegebanca.jinja
+function checkedBank()
 {
-    getBankList().then(res => res.json())
-    .then((data) => {
-        data['data'].forEach(bank => {
-            addBank(bank['nume'],bank['url'],bank['id']);
-        })
-    })
-    getUserBank().then(res => res.json())
-    .then((data) => { 
-        console.log(data);
-    })
-    
     let boxes = document.querySelector("#boxes");
     if(boxes.childElementCount > 0)
     {
         let downloadButton = document.querySelector("#download-button");
         downloadButton.style.display = 'block';
     }
+}
+async function createBankList()  // functie care creaza lista de banci in alegebanca.jinja
+{
+    getBankList().then((data) => {
+        data.forEach(bank => {
+            console.log(bank);
+            addBank(bank['name'],bank['url'],bank['id']);
+        })
+    })
+    getUserBank().then((data) => { 
+        console.log(data);
+    })
+    
+    
 
 }
+createBankList();
