@@ -87,4 +87,6 @@ input[type="radio"]
       font-size:28px !important;
       font-weight:550;
   }
-  
+  .already-have-bank{
+      display:none;
+  }
