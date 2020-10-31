@@ -5,7 +5,6 @@ from itoit import app, db
 from itoit.Models import models
 
 
-
 @app.route("/alegebanca", methods=['GET'])
 def alegebanca_get():
     return render_template("alegebanca.jinja", user=current_user)
