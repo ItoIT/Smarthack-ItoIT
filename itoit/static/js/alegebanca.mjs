@@ -1,4 +1,4 @@
-import {getBankList, getUserBank} from "./API/API.mjs";
+import {getBankList,getFirmsProgress} from "./API/API.mjs";
 
 function addBank(numeBanca, pdfBanca, idBanca) // functie care adauga in lista de banci o banca
 {
@@ -38,17 +38,26 @@ function checkedBank()
 }
 async function createBankList()  // functie care creaza lista de banci in alegebanca.jinja
 {
-    getBankList().then((data) => {
-        data.forEach(bank => {
-            console.log(bank);
-            addBank(bank['name'],bank['url'],bank['id']);
-        })
+    getFirmsProgress().then((data) => { 
+        let alreadyHaveBank = document.querySelector(".already-have-bank");
+        let eraseBankChoice = document.querySelector(".bank-choice");
+        if(data.length > 0 && data[0]['bank_documents_approved']  === true )
+        { 
+            alreadyHaveBank.innerHTML += " " + data[0]['bank_name'];
+            alreadyHaveBank.style.display = 'block';
+            eraseBankChoice.style.display = 'none';
+        }
+        else
+        {
+            alreadyHaveBank.style.display = 'none';
+            eraseBankChoice.style.display = 'block';
+            getBankList().then((data) => {
+                data.forEach(bank => {
+                    console.log(bank);
+                    addBank(bank['name'],bank['url'],bank['id']);
+                })
+            })
+        }
     })
-    getUserBank().then((data) => { 
-        console.log(data);
-    })
-    
-    
-
 }
 createBankList();

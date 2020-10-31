@@ -76,8 +76,8 @@ input[type="radio"]
     transform: rotate(45deg);
   }
   .download-button{
-      display:none;
       color:white !important;
+      margin-right:10px;
       width:250px;
   }
   .p-text{
@@ -86,7 +86,4 @@ input[type="radio"]
       color:black!important;
       font-size:28px !important;
       font-weight:550;
-  }
-  .already-have-bank, .bank-choice{
-      display:none;
   }
