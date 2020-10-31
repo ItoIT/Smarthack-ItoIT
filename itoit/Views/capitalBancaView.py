@@ -13,6 +13,7 @@ def capitalbanca_get():
 def capitalbanca_post():
     firm = models.Firm.query.filter(models.Firm.user_id==current_user.id).first()
     firm.factura_capital = request.files['completatebanca'].read()
+    firm.feedback = None
     db.session.add(firm)
     db.session.commit()
     return redirect(url_for("capitalbanca_get"))
