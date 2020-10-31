@@ -79,3 +79,10 @@ input[type="radio"]
       display:none;
       width:auto;
   }
+  .p-text{
+      padding-top:30px;
+      padding-bottom:30px;
+      color:black!important;
+      font-size:28px !important;
+      font-weight:550;
+  }
