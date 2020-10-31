@@ -1,13 +1,14 @@
 from itoit import app, db
 from flask_login import login_user
 from itoit.Models import models
-import flask
+from flask import request, render_template
+
 
 @app.route('/register', methods=['POST'])
 def register():
     data = request.json
     register(data)
-    return flask.render_template('index.jinja', user=user)
+    return render_template('index.jinja', user=user)
 
 
 def register(form):
