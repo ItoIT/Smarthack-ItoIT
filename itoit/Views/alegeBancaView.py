@@ -6,4 +6,4 @@ from itoit import app
 
 @app.route("/alegebanca", methods=['GET'])
 def alegebanca():
-    return render_template("alegebanca.jinja")
+    return render_template("alegebanca.jinja", user=current_user)
