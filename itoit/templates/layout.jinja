@@ -30,9 +30,22 @@
                         <div class="mx-auto text-center">
                             <nav class="site-navigation position-relative text-right" role="navigation">
                                 <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block m-0 p-0">
-                                    {# Navbar stuff #}
+                                    <a class="nav-link cool-link home" href=".#">Acasa</a>
+                                    <a class="nav-link cool-link" href=".#programs-section">Despre</a>
+                                    <a class="nav-link cool-link" href=".#contact-section">Contact</a>
+                                    <div class = "right-navbar-mobile">
+
+                                        <a class="btn btn-primary logout-btn  nav-link " href="/logout" >Log out</a>
+                                    </div>
                                </ul>
                             </nav>
+                        </div>
+                        <div class="account_profile">
+                              {% if user.is_authenticated %}
+                                    <a href="/acte"><i class="fas fa-file fa-2x mr-4 documents-color far"></i></a>
+                                    <a href="/logout"><i class="fas fa-sign-out-alt signout_button fa-2x far"></i></a>
+                              {% endif %}
+                          
                         </div>
                         <div class="only_mobile">
                             <div class="ml-auto w-25">

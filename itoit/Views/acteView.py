@@ -6,4 +6,4 @@ from itoit import app
 
 @app.route("/acte", methods=['GET'])
 def acte():
-    return render_template("acte.jinja")
+    return render_template("acte.jinja", user=current_user)
