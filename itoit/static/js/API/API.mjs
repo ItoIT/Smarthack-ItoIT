@@ -43,7 +43,7 @@ export function getONRCS() {
             return [];
         });
 }
-export function getFirmProgress() {
+export function getFirmsProgress() {
     const endpoint_data = {
         method: "GET",
     };

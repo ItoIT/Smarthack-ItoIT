@@ -2,7 +2,6 @@ import {getBankList, getUserBank} from "./API/API.mjs";
 
 function addBank(numeBanca, pdfBanca, idBanca) // functie care adauga in lista de banci o banca
 {
-    
     let boxes = document.querySelector("#boxes");
     let box = document.createElement("div");
     box.classList = "box";
