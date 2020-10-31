@@ -1,6 +1,8 @@
+import {getBankList, getUserBank} from "./API/API";
+
 function addBank(numeBanca, pdfBanca, idBanca) // functie care adauga in lista de banci o banca
 {
-  
+    
     let boxes = document.querySelector("#boxes");
     let box = document.createElement("div");
     box.classList = "box";
@@ -24,10 +26,25 @@ function addBank(numeBanca, pdfBanca, idBanca) // functie care adauga in lista d
     boxes.appendChild(box);
 }
 
-let boxes = document.querySelector("#boxes");
-console.log(boxes.childElementCount);
-if(boxes.childElementCount > 0)
+
+async function createBankList()  // functie care creaza lista de banci in alegebanca.jinja
 {
-    let downloadButton = document.querySelector("#download-button");
-    downloadButton.style.display = 'block';
+    getBankList().then(res => res.json())
+    .then((data) => {
+        data['data'].forEach(bank => {
+            addBank(bank['nume'],bank['url'],bank['id']);
+        })
+    })
+    getUserBank().then(res => res.json())
+    .then((data) => { 
+        console.log(data);
+    })
+    
+    let boxes = document.querySelector("#boxes");
+    if(boxes.childElementCount > 0)
+    {
+        let downloadButton = document.querySelector("#download-button");
+        downloadButton.style.display = 'block';
+    }
+
 }
