@@ -60,23 +60,26 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
   }
   let btnToAuth = document.querySelector("small#to-sign-in");
-  btnToAuth.addEventListener('click', () => {
+  if (btnToAuth) {
+    btnToAuth.addEventListener('click', () => {
+      let registerForm = document.querySelector("#register-form");
+      let loginForm =  document.querySelector("#login-form");
+      registerForm.classList.toggle("d-none");
+      registerForm.classList.toggle("d-block");
+      loginForm.classList.toggle("d-none");
+      loginForm.classList.toggle("d-block");
+  
+    });
+  }
+  if (btnToRegister) {
+    let btnToRegister = document.querySelector("small#to-register");
+    btnToRegister.addEventListener('click', () => {
     let registerForm = document.querySelector("#register-form");
     let loginForm =  document.querySelector("#login-form");
     registerForm.classList.toggle("d-none");
     registerForm.classList.toggle("d-block");
     loginForm.classList.toggle("d-none");
     loginForm.classList.toggle("d-block");
-
   });
-
-  let btnToRegister = document.querySelector("small#to-register");
-  btnToRegister.addEventListener('click', () => {
-    let registerForm = document.querySelector("#register-form");
-    let loginForm =  document.querySelector("#login-form");
-    registerForm.classList.toggle("d-none");
-    registerForm.classList.toggle("d-block");
-    loginForm.classList.toggle("d-none");
-    loginForm.classList.toggle("d-block");
-  });
+  }
 });
