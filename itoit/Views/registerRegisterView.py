@@ -16,12 +16,18 @@ def registerregister_get():
 def registerregister_post():
     # TODO: make sure current_user is admin
     if request.form['email'] and request.form['psw'] and request.form['name']:
-        hashed_password = bcrypt.generate_password_hash(request.form["psw"]).decode('utf-8')
-        trade_register = models.TradeRegister(email=request.form["email"], password=hashed_password,
-                           name=request.form['name'], documents=request.files['documents'].read())
+        hashed_password = bcrypt.generate_password_hash(
+            request.form["psw"]).decode('utf-8')
+        trade_register = models.TradeRegister(
+            name=request.form['name'], documents=request.files['documents'].read())
         db.session.add(trade_register)
+
+        trade_register = models.TradeRegister.query.filter_by(name=request.form["name"]).first()
+        trade_register_user = models.Users(
+            trade_register_id=trade_register.id, email=request.form["email"], password=hashed_password,)
+
+        db.session.add(trade_register_user)
         db.session.commit()
     else:
         print("Incomplete form data")
     return redirect(url_for("registerregister_get"))
-
