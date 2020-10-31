@@ -1,7 +1,7 @@
 from itoit import app, db, bcrypt
 from flask_login import login_user, current_user
 from itoit.Models import models
-from flask import request, render_template, flash
+from flask import request, render_template, flash, redirect
 
 
 @app.route('/register', methods=['POST'])
