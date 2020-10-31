@@ -11,6 +11,7 @@ def firms():
         ret.append({
             "id": firm.id,
             "bank_name": firm.bank.name,
+            "trade_register_name": firm.trade_register.name,
             "bank_documents_url": flask.url_for("firm_bank_documents", id=firm.id),
             "bank_documents_approved": firm.bank_documents_approved,
             "register_documents_url": flask.url_for("firm_register_documents", id=firm.id),

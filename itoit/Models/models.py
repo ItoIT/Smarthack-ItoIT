@@ -42,6 +42,7 @@ class Firm(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     bank_id = db.Column(db.Integer, db.ForeignKey('bank.id'))
+    trade_register_id = db.Column(db.Integer, db.ForeignKey('trade_register.id'))
     bank_documents = db.Column(db.LargeBinary, nullable=True)
     bank_documents_approved = db.Column(db.Boolean, default=False)
     register_documents = db.Column(db.LargeBinary, nullable=True)
@@ -49,6 +50,8 @@ class Firm(db.Model):
     factura_capital = db.Column(db.LargeBinary, nullable=True)
     factura_capital_approved = db.Column(db.Boolean, default=False)
     complete_documents = db.Column(db.LargeBinary, nullable=True)
+    feedback = db.Column(db.Text, nullable=True)
 
     user = relationship("Users", backref="users", foreign_keys=[user_id])
     bank = relationship("Bank", backref="firmbank", foreign_keys=[bank_id])
+    trade_register = relationship("TradeRegister", backref="firmtrade_register", foreign_keys=[trade_register_id])
