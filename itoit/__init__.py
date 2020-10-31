@@ -19,9 +19,11 @@ login_manager.init_app(app)
 
 from .Controllers import registerController
 from .Controllers import loginController
+from .Controllers import banciController
 
 from .Views import homepageView
 from .Views import acteView
 from .Views import alegeBancaView
 from .Views import capitalBancaView
 from .Views import registruView
+from .Views import registerBancaView
