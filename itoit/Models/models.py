@@ -8,7 +8,7 @@ def load_user(user_id):
     return Users.query.get(user_id)
 
 
-class Users(db.Model):
+class Users(db.Model, UserMixin):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), nullable=False)

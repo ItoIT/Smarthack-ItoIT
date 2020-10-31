@@ -14,7 +14,7 @@
     <div id="fb-root"></div>
      <div class="intro-section" id="home-section">
         <div class="slide-1" data-stellar-background-ratio="1"
-            style="background: linear-gradient(rgba(52, 58, 64, 0.6), rgba(52, 58, 64, 0.6)), url('static/images/meditatii_informatica.webp');
+            style="background: linear-gradient(rgba(52, 58, 64, 0.6), rgba(52, 58, 64, 0.6)), url('static/images/index.jpg');
                    background-size: cover;
                    background-position: center;
                    background-repeat: no-repeat;">
@@ -24,19 +24,135 @@
                         <div class="row align-items-center">
                             <div class="col-lg-6 mb-1 mt-4">
                                 <div class="text1">
-                                    <a href="/register" type="button" class="btn btn-primary p-5">Register now!</a>
+                                    <h1 data-aos="fade-down" class = "learn-experts">Easiest way to start <span class="Experts">your business!</span></h1>
+	                                <p data-aos="fade-right"> Aceasta este o platformă realizată cu și pentru pasionații
+                                    de informatică. Oferim pregătire pentru examenul de Bacalaureat, admiterea la facultate, olimpiade și concursuri.
+                                    Dacă vrei să înveți programare, să găsești rezolvări creative pentru probleme competitive
+                                    și să îți depășești potențialul în informatică, 
+                                    acest loc este pentru tine. 
+                                    </p>
                                 </div>
                             </div>
+
+                            {% if not user.is_authenticated %}
+                                <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="500">
+                                    <div class="form-box">
+                                        <form action="/register" method="post" class="form-box d-block" id="register-form">
+                                            <h3 class="h4 text-black mb-4">Sign Up</h3>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Email Addresss" name="email" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" placeholder="Password" name="password" required>
+                                            </div>
+                                            <div class="form-group mb-4">
+                                                <input type="password" class="form-control" placeholder="Re-type Password" name="confirmPassword" required>
+                                            </div>
+                                              {% with messages = get_flashed_messages() %}
+                                                    {% if messages %}
+                                                        <ul class=flashes>
+                                                        {% for message in messages %}
+                                                        <li>{{ message }}</li>
+                                                        {% endfor %}
+                                                        </ul>
+                                                    {% endif %}
+                                                {% endwith %}
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary btn-pill" value="Sign up">Sign Up</button>
+                                            </div>
+                                            <div class="account_true">
+                                                <small class="text-muted ml-2" id="to-sign-in">
+                                                    <a>Ești deja înregistrat?<b> Autentifică-te!</b></a>
+                                                </small>
+                                            </div>
+                                        </form>
+
+
+                                        <form action="/login" method="post" class="form-box d-none" id="login-form">
+                                            <h3 class="h4 text-black mb-4">Sign in</h3>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Email Addresss" name="email" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" placeholder="Password" name="password" required>
+                                            </div>
+                                               {% with messages = get_flashed_messages() %}
+                                                    {% if messages %}
+                                                        <ul class=flashes>
+                                                        {% for message in messages %}
+                                                        <li>{{ message }}</li>
+                                                        {% endfor %}
+                                                        </ul>
+                                                    {% endif %}
+                                                {% endwith %}
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary btn-pill" value="Sign up">Sign In</button>
+                                            </div>
+                                            <div class="ForgotPasswordButton">
+                                                <small class="text-muted ml-2">
+                                                    <a><b> Ți-ai uitat parola? </b></a>
+                                                </small>
+                                            </div>
+                                            <div class="account_false">
+                                                <small class="text-muted ml-2" id="to-register">
+                                                    <a >Nu ai înca un cont?<b> Înregistrează-te!</b></a>
+                                                </small>
+                                            </div>
+                                        </form>
+                                        {# <form class="account_info" id="sign_in" method="post">
+                                            <fieldset class="form-group">
+                                                <h3 class="h4 text-black mb-4">Autentifică-te!</h3>
+                                                    <input type="email" placeholder="Email" required>
+                                                    <input type="password" placeholder="Password" required>
+                                            </fieldset>
+                                            <div class="login">
+                                                <div class="form-group d-flex flex-column center">
+                                                    <button type='submit' class="btn btn-primary btn-pill mb-2">
+                                                    <!--<div class=" fb-login-button ml-auto mr-auto mb-2  center" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="false"  href="/facebook_login"></div>
+                                                    <a class="btn google-login-a" href="/google_login"><img class ="google-login" src="static/images/google_login.png"> </a>-->
+                                                </div>
+                                            </div>
+                                            <div class="ForgotPasswordButton">
+                                                <small class="text-muted ml-2">
+                                                    <a ><b> Ți-ai uitat parola? </b></a>
+                                                </small>
+                                            </div>
+        
+                                        </form>
+
+                                        <form class="account_info" id="forgot_password" action="" method="post">}
+                                            <fieldset class="form-group">
+                                                <h3 class="h4 text-black mb-4"> <b> Ți-ai uitat parola? </b></h3>
+                                                    <input type="email" placeholder="Email" required>
+                                            </fieldset>
+                                            <button type='submit' class="btn btn-primary btn-pill">
+                                            <div class="account_true">
+                                                <small class="text-muted ml-2">
+                                                    <a >Ești deja înregistrat?<b> Autentifică-te!</b></a>
+                                                </small>
+                                            </div>
+                                            <div class="account_false">
+                                                <small class="text-muted ml-2">
+                                                    <a >Nu ai înca un cont?<b> Înregistrează-te!</b></a>
+                                                </small>
+                                            </div>
+                                        </form> #}
+                                    </div>
+                                </div>
+                            {% endif %}
                         </div>  
                     </div>
                 </div>
             </div>
         </div>
     </div>
+            
+     
+
 
 
     <div class="site-section" id="programs-section" name="programs-section">
-        {# <div class="container">
+        <div class="container">
             <div class="row mb-5 justify-content-center">
                 <div class="col-lg-8 text-center" data-aos="fade-up">
                     <h2 class="section-title">Mediu propice învățării</h2>
@@ -147,10 +263,10 @@
                         src="static/images/feedback2.jpg">
                 </div>
             </div>
-        </div> #}
+        </div>
     </div>
     <div class="site-section" id="teachers-section" name="teachers-section">
-        {# <div class="container">
+        <div class="container">
             <div class="row mb-5 justify-content-center">
                 <div class="col-lg-7 mb-5 text-center" data-aos="fade-up" data-aos-delay="500">
                     <h2 class="section-title">Profesorii</h2>
@@ -240,11 +356,11 @@ Doresc să dau mai departe din pasiunea mea și să-i ajut și pe cei din jurul 
                 </div>
                 
             </div>
-        </div> #}
+        </div>
     </div>
 
     <div class="site-section bg-light" id="faq-section" name="faq-section">
-        {# <div class="future-blobs">
+        <div class="future-blobs">
             <div class="blob_2">
                 <img alt="Image" src="static/images/blob_3.svg">
             </div>
@@ -315,10 +431,10 @@ Doresc să dau mai departe din pasiunea mea și să-i ajut și pe cei din jurul 
                 </div>
             </div>
             </div>
-        </div> #}
+        </div>
     </div>
     <div class="site-section bg-light" id="contact-section" name="contact-section">
-        {# <div class="container">
+        <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-7 text-center" data-aos="fade-up">
                     <h2 class="section-title mb-3">Contactează-ne</h2>
@@ -328,7 +444,7 @@ Doresc să dau mai departe din pasiunea mea și să-i ajut și pe cei din jurul 
                     <p class = "contact-p mb-5 ">Telefon / WhatsApp:<b> 0740 764 496 </b> </p>
                 </div>
             </div>
-        </div> #}
+        </div>
     </div>
 {% endblock content %}
 
