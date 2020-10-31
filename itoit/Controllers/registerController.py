@@ -23,7 +23,7 @@ def register():
 
 def register(form):
     hashed_password = bcrypt.generate_password_hash(
-        form["password"]).decode('utf-8')
+        form["password"]).decode("utf-8")
     user = models.Users(email=form["email"], password=hashed_password)
     db.session.add(user)
     db.session.commit()
