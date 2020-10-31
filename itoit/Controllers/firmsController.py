@@ -10,11 +10,11 @@ def firms():
     for firm in firms:
         ret.append({
             "id": firm.id,
-            "bank_documents_url": flask.url_for("firmbankdocuments", firm.id),
+            "bank_documents_url": flask.url_for("firm_bank_documents", id=firm.id),
             "bank_documents_approved": firm.bank_documents_approved,
-            "register_documents_url": flask.url_for("firmregisterdocuments", firm.id),
-            "register_documents_approved": firmn.register_documents_approved,
-            "factura_capital_url": flask.url_for("firmfacturacapital", firm.id),
+            "register_documents_url": flask.url_for("firm_register_documents", id=firm.id),
+            "register_documents_approved": firm.register_documents_approved,
+            "factura_capital_url": flask.url_for("firm_factura_capital", id=firm.id),
             "factura_capital_approved": firm.factura_capital_approved
         })
     return flask.jsonify(ret)
