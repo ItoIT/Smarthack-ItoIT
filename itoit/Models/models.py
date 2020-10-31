@@ -12,8 +12,13 @@ class Users(db.Model, UserMixin):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), nullable=False)
-    password = db.Column(db.String(100), nullable=False)
+    password = db.Column(db.String(200), nullable=False)
     admin = db.Column(db.Boolean, default=False)
+    name = db.Column(db.String(200))
+    cnp = db.Column(db.String(14))
+    serie = db.Column(db.String(9))
+    domiciliu = db.Column(db.String(200))
+    adresa_sediu = db.Column(db.String(200))
     bank_id = db.Column(db.Integer, db.ForeignKey('bank.id'))
     trade_register_id = db.Column(db.Integer, db.ForeignKey('trade_register.id'))
 
