@@ -16,7 +16,7 @@ class Users(db.Model, UserMixin):
     admin = db.Column(db.Boolean, default=False)
 
 
-class TradeRegister(db.Model):
+class TradeRegister(db.Model, UserMixin):
     __tablename__ = 'trade_register'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
@@ -24,7 +24,7 @@ class TradeRegister(db.Model):
     password = db.Column(db.String(100), nullable=False)
     documents = db.Column(db.LargeBinary, nullable=False)
 
-class Bank(db.Model):
+class Bank(db.Model, UserMixin):
     __tablename__ = 'bank'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=True)
