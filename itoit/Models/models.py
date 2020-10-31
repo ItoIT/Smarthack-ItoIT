@@ -41,11 +41,13 @@ class Firm(db.Model):
     __tablename__ = 'firm'
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    bank_id = db.Column(db.Integer, db.ForeignKey('bank.id'))
     bank_documents = db.Column(db.LargeBinary, nullable=True)
-    bank_documents_approved = db.Column(db.Boolean)
+    bank_documents_approved = db.Column(db.Boolean, default=False)
     register_documents = db.Column(db.LargeBinary, nullable=True)
-    register_documents_approved = db.Column(db.Boolean)
+    register_documents_approved = db.Column(db.Boolean, default=False)
     factura_capital = db.Column(db.LargeBinary, nullable=True)
-    factura_capital_approved = db.Column(db.Boolean)
+    factura_capital_approved = db.Column(db.Boolean, default=False)
 
     user = relationship("Users", backref="users", foreign_keys=[user_id])
+    #bank = relationship("Bank", backref="bank", foreign_keys=[bank_id])
