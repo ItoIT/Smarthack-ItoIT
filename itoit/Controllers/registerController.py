@@ -9,7 +9,7 @@ def register():
     data = request.form.to_dict()
     if data["password"] != data["confirmPassword"]:
         flash("Passwords do not match!")
-        return render_template('index.jinja')
+        return render_template('index.jinja', user=current_user)
     register(data)
     return render_template('index.jinja', user=current_user)
 
