@@ -2,7 +2,6 @@ import {getBankList, getUserBank} from "./API/API.mjs";
 
 function addBank(numeBanca, pdfBanca, idBanca) // functie care adauga in lista de banci o banca
 {
-    
     let boxes = document.querySelector("#boxes");
     let box = document.createElement("div");
     box.classList = "box";
@@ -11,6 +10,7 @@ function addBank(numeBanca, pdfBanca, idBanca) // functie care adauga in lista d
     input.type="radio";
     input.name = "banca";
     input.id = numeBanca;
+    input.value = String(idBanca);
     input.classList = "checkbox";
     input.addEventListener('click', function (){
         let downloadButton = document.querySelector("#download-button");

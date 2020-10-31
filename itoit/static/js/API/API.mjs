@@ -43,5 +43,20 @@ export function getONRCS() {
             return [];
         });
 }
+export function getFirmsProgress() {
+    const endpoint_data = {
+        method: "GET",
+    };
+    var url = "/firms";
+    return fetch(url, endpoint_data)
+        .then(res => res.json())
+        .then((data) => {
+            return data;
+        })
+        .catch(e => {
+            console.log(e);
+            return [];
+        });
+}
 
 
