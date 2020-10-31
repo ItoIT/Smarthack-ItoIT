@@ -12,6 +12,7 @@ class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), nullable=False)
     password = db.Column(db.String(100), nullable=False)
+    admin = db.Column(db.Boolean, default=False)
 
 
 class TradeRegister(db.Model):
@@ -21,9 +22,7 @@ class TradeRegister(db.Model):
     email = db.Column(db.String(120), nullable=False)
     documents = db.Column(db.LargeBinary, nullable=False)
 
-class Bank(db.Model):
+class Bank(Users):
     __tablename__ = 'bank'
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    email = db.Column(db.String(120), nullable=False)
-    documents = db.Column(db.LargeBinary, nullable=False)
+    name = db.Column(db.String(100), nullable=True)
+    documents = db.Column(db.LargeBinary, nullable=True)
