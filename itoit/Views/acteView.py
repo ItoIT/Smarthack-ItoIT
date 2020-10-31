@@ -8,6 +8,6 @@ from itoit import app
 def acte():
     if current_user.bank_id is not None:
         return render_template("actebanca.jinja", user=current_user)
-    else if current_user.trade_register_id is not None:
+    elif current_user.trade_register_id is not None:
         return render_template("acteregister.jinja", user=current_user)
     return render_template("acte.jinja", user=current_user)
