@@ -14,22 +14,27 @@ class Users(db.Model, UserMixin):
     email = db.Column(db.String(120), nullable=False)
     password = db.Column(db.String(100), nullable=False)
     admin = db.Column(db.Boolean, default=False)
+    bank_id = db.Column(db.Integer, db.ForeignKey('bank.id'))
+    trade_register_id = db.Column(db.Integer, db.ForeignKey('trade_register.id'))
+
+    bank = relationship(
+        "Bank", backref="bank", foreign_keys=[bank_id]
+    )
+    trade_register = relationship(
+        "TradeRegister", backref="trade_register", foreign_keys=[trade_register_id]
+    )
 
 
 class TradeRegister(db.Model, UserMixin):
     __tablename__ = 'trade_register'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
-    email = db.Column(db.String(120), nullable=False)
-    password = db.Column(db.String(100), nullable=False)
     documents = db.Column(db.LargeBinary, nullable=False)
 
 class Bank(db.Model, UserMixin):
     __tablename__ = 'bank'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=True)
-    email = db.Column(db.String(120), nullable=False)
-    password = db.Column(db.String(100), nullable=False)
     documents = db.Column(db.LargeBinary, nullable=True)
 
 class Firm(db.Model):
