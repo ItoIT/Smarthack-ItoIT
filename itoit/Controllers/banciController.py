@@ -11,6 +11,11 @@ def banci():
         ret.append({
             "id": bank.id,
             "name": bank.name,
-            "url": "ikolergjgioeri8g9oreio"
+            "url": flask.url_for("bankdocuments", id=bank.id)
         })
     return flask.jsonify(ret)
+
+@app.route('/bankdocuments/<int:id>')
+def bankdocuments(id):
+    bank = models.Bank.query.filter(models.Bank.id==id).first()
+    return app.response_class(bank.documents, mimetype='application/pdf')
