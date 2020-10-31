@@ -38,7 +38,7 @@
                             {% if not user.is_authenticated %}
                                 <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="500">
                                     <div class="form-box">
-                                        <form action="/register" method="post" class="form-box">
+                                        <form action="/register" method="post" class="form-box d-block" id="register-form">
                                             <h3 class="h4 text-black mb-4">Sign Up</h3>
                                             <div class="form-group">
                                                 <input type="text" class="form-control" placeholder="Email Addresss" name="email" required>
@@ -62,14 +62,14 @@
                                                 <button type="submit" class="btn btn-primary btn-pill" value="Sign up">Sign Up</button>
                                             </div>
                                             <div class="account_true">
-                                                <small class="text-muted ml-2">
-                                                    <a >Ești deja înregistrat?<b> Autentifică-te!</b></a>
+                                                <small class="text-muted ml-2" id="to-sign-in">
+                                                    <a>Ești deja înregistrat?<b> Autentifică-te!</b></a>
                                                 </small>
                                             </div>
                                         </form>
 
 
-                                        <form action="/login" method="post" class="form-box d-none">
+                                        <form action="/login" method="post" class="form-box d-none" id="login-form">
                                             <h3 class="h4 text-black mb-4">Sign in</h3>
                                             <div class="form-group">
                                                 <input type="text" class="form-control" placeholder="Email Addresss" name="email" required>
@@ -86,7 +86,7 @@
                                                 </small>
                                             </div>
                                             <div class="account_false">
-                                                <small class="text-muted ml-2">
+                                                <small class="text-muted ml-2" id="to-register">
                                                     <a >Nu ai înca un cont?<b> Înregistrează-te!</b></a>
                                                 </small>
                                             </div>

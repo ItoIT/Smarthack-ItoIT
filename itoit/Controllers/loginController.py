@@ -12,7 +12,7 @@ def login():
 
     if not user and not bcrypt.check_password_hash(user.password, data["password"]):
         flash("Email or password is invalid!")
-        return redirect("index.jinja")
+        return redirect("index.jinja", user=curent_user)
     
     login(user)
     return render_template('index.jinja', user=current_user)
