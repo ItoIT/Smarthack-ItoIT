@@ -5,7 +5,12 @@ import flask
 
 @app.route('/firms', methods=['GET'])
 def firms():
-    firms = models.Firm.query.filter(models.Firm.user_id == current_user.id).all()
+    if current_user.bank_id is not None:
+        firms = models.Firm.query.filter(models.Firm.bank_id == current_user.id).all()
+    elif current_user.trade_register_id is not None:
+        firms = models.Firm.query.filter(models.Firm.trade_register_id == current_user.id).all()
+    else:
+        firms = models.Firm.query.filter(models.Firm.user_id == current_user.id).all()
     ret = []
     for firm in firms:
         ret.append({
@@ -21,6 +26,7 @@ def firms():
             "acte_complete_url": flask.url_for("firm_complete_documents", id=firm.id)
         })
     return flask.jsonify(ret)
+
 
 @app.route('/firmbankdocuments/<int:id>')
 def firm_bank_documents(id):
