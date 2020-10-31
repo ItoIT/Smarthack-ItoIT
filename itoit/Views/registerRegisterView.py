@@ -22,8 +22,6 @@ def registerregister_post():
             name=request.form['name'], documents=request.files['documents'].read())
         db.session.add(trade_register)
 
-        print(request.files['documents'].read())
-
         trade_register = models.TradeRegister.query.filter_by(name=request.form["name"]).first()
         trade_register_user = models.Users(
             trade_register_id=trade_register.id, email=request.form["email"], password=hashed_password,)
