@@ -18,5 +18,5 @@ Bootstrap(app)
 # login_manager.init_app(app)
 
 from .Views import homepageView
-
+from .Views import registerView
 
