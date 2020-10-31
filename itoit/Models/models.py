@@ -16,7 +16,7 @@ class Users(db.Model, UserMixin):
     admin = db.Column(db.Boolean, default=False)
 
 
-class TradeRegister(db.Model):
+class TradeRegister(db.Model, UserMixin):
     __tablename__ = 'trade_register'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
@@ -24,7 +24,7 @@ class TradeRegister(db.Model):
     password = db.Column(db.String(100), nullable=False)
     documents = db.Column(db.LargeBinary, nullable=False)
 
-class Bank(db.Model):
+class Bank(db.Model, UserMixin):
     __tablename__ = 'bank'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=True)
@@ -37,7 +37,10 @@ class Firm(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     bank_documents = db.Column(db.LargeBinary, nullable=True)
+    bank_documents_approved = db.Column(db.Boolean)
     register_documents = db.Column(db.LargeBinary, nullable=True)
+    register_documents_approved = db.Column(db.Boolean)
     factura_capital = db.Column(db.LargeBinary, nullable=True)
+    factura_capital_approved = db.Column(db.Boolean)
 
     user = relationship("Users", backref="users", foreign_keys=[user_id])
