@@ -18,6 +18,7 @@ login_manager.login_message_category = 'info'
 login_manager.init_app(app)
 
 from .Controllers import registerController
+from .Controllers import banciController
 
 from .Views import homepageView
 from .Views import acteView
