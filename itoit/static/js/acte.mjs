@@ -70,8 +70,23 @@ function updateProgress() // functie care updateaza progresul de creare a firmei
                 disableAnchor(steps[1]);
                 disableAnchor(steps[2]);
         }
+        alertsAnchors();
     })
 
+}
+function alertsAnchors() {
+    let anchors = Array.from(document.querySelectorAll("div.step > a"));
+    anchors.forEach(element => {
+        element.addEventListener('click', ev => {
+            if (element.classList.contains("disabled")) {
+                Swal.fire({
+                icon: 'error',
+                title: 'Error!',
+                text: 'Nu poti trece la pasul asta fara a avea completat pasii anteriori!',
+                });
+            }
+        });
+    });
 }
 
 updateProgress();
