@@ -7206,7 +7206,7 @@ button.bg-dark:focus {
   color:rgba(240, 147, 43,1.0) !important; }
 
 a.text-primary:hover, a.text-primary:focus {
-  color:rgba(240, 147, 43,1.0); !important; }
+  color:rgba(240, 147, 43,1.0) !important; }
 
 .text-secondary {
   color: #6c757d !important; }
