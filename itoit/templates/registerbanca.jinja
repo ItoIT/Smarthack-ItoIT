@@ -24,24 +24,21 @@
                         <div class="row align-items-center">
                             <div class="col-lg-6 mb-1 mt-4">
                                 
-                                <form class ="form-box" style = " display:flex; flex-direction :column"> 
-                                    <label for="uname"><b>Email</b></label>
-                                    <input type="text" placeholder="Email" name="uname" required>
+                                <form method="POST" class="form-box" style="display:flex; flex-direction:column" enctype="multipart/form-data"> 
+                                    <label for="email"><b>Email</b></label>
+                                    <input type="text" placeholder="Email" name="email" required>
 
                                     <label for="psw"><b>Parola</b></label>
                                     <input type="password" placeholder="Parola" name="psw" required>
 
-                                        <label for="psw"><b>Nume banca</b></label>
+                                    <label for="name"><b>Nume banca</b></label>
                                     <input type="text" placeholder="Nume banca" name="name" required>
                                     
-                                    <label for="avatar">Documente pentru deschidere cont firma:</label>
-                                    <input type="file" id="avatar" name="avatar" accept="image/*,.pdf">
+                                    <label for="documents">Documente pentru deschidere cont firma:</label>
+                                    <input type="file" name="documents" accept="image/*,.pdf">
 
-                                    <button type="submit" class = "btn btn-primary">Login</button>
+                                    <button type="submit" class = "btn btn-primary">Register</button>
                                 </form>
-
-                                    
-                                
                             </div>
                         </div>  
                     </div>
