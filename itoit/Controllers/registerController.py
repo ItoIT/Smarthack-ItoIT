@@ -1,7 +1,7 @@
 from itoit import app, db, bcrypt
 from flask_login import login_user, current_user
 from itoit.Models import models
-from flask import request, render_template, flash
+from flask import request, render_template, flash, redirect
 
 
 @app.route('/register', methods=['POST'])
@@ -23,7 +23,7 @@ def register():
 
 def register(form):
     hashed_password = bcrypt.generate_password_hash(
-        form["password"]).decode('utf-8')
+        form["password"]).decode("utf-8")
     user = models.Users(email=form["email"], password=hashed_password)
     db.session.add(user)
     db.session.commit()
