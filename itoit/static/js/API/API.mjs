@@ -58,5 +58,21 @@ export function getFirmsProgress() {
             return [];
         });
 }
+export function readIdCard() {
+    const endpoint_data = {
+        method: "POST",
+    };
+    
+    var url = "/readIdCard";
+    return fetch(url, endpoint_data)
+        .then(res => res.json())
+        .then((data) => {
+            return data;
+        })
+        .catch(e => {
+            console.log(e);
+            return [];
+        });
+}
 
 

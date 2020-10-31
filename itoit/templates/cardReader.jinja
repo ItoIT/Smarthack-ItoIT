@@ -24,13 +24,19 @@
                         <div class="row align-items-center">
                             <div class="col-lg-6 mb-1 mt-4">
                                 
-                                <form action="/readIdCard" method="POST" class="form-box" style="display:flex; flex-direction:column" enctype="multipart/form-data"> 
+                                <form action="/readIdCard" method="POST" class="form-box" style="display:flex; flex-direction:column" enctype="multipart/form-data" id="readForm"> 
                                     
-                                    <label for="documents">Documente pentru registru:</label>
-                                    <input type="file" name="image" accept="image/*,.pdf">
-                                    <span class="d-none spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>
-                                    <button type="submit" class="btn btn-primary">Register</button>
+                                    <label for="documents">Incarca actul de identitate:</label>
+                                    <input type="file" id="idCard" name="image" accept="image/*,.pdf">
+                                    <button type="submit" class="btn btn-primary mt-4" id="submitReader">Incarca</button>
                                 </form>
+                                <span class="d-none spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>
+
+                                <form action="" method="POST" class="form-box d-none" style="display:flex; flex-direction:column" >
+
+
+                                </form>
+
                             </div>
                         </div>  
                     </div>
@@ -46,4 +52,5 @@
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/cardReader.mjs') }}"></script>
 {% endblock scripts %}
