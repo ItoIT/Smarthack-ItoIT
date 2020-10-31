@@ -7,11 +7,18 @@ from flask import request, render_template, flash
 @app.route('/register', methods=['POST'])
 def register():
     data = request.form.to_dict()
+    user = models.Users.query.filter_by(email=data["email"]).first()
+
+    if user:
+        flash("Account with given email already exists!")
+        return redirect('/')
+
     if data["password"] != data["confirmPassword"]:
         flash("Passwords do not match!")
-        return render_template('index.jinja', user=current_user)
+        return redirect('/')
+
     register(data)
-    return render_template('index.jinja', user=current_user)
+    return redirect('/')
 
 
 def register(form):
