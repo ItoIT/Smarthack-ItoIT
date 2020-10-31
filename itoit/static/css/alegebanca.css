@@ -77,7 +77,8 @@ input[type="radio"]
   }
   .download-button{
       display:none;
-      width:auto;
+      color:white !important;
+      width:250px;
   }
   .p-text{
       padding-top:30px;
@@ -86,6 +87,4 @@ input[type="radio"]
       font-size:28px !important;
       font-weight:550;
   }
-  .download-button {
-    color:white !important;
-}
+  
