@@ -24,6 +24,7 @@
                         <div class="row align-items-center">
                             <div class="col-lg-12 mb-1 mt-4 banks-content">
                                 <div class="text2 ">
+                               
                                     <div class = "h2">Alege banca la care vrei sa deschizi capitalul social al firmei</div>
                                     <div class ="banks" id="banks">
                                         <div class="boxes" id="boxes">
@@ -31,14 +32,16 @@
                                         </div> 
                                     </div>
                                     <div class = "h2">Documentele de completat pentru banca aleasa: </div>
-                                    <div class="documents" id="documents">
-                                        <a class= "download-button btn btn-primary" id = "download-button" target="_blank"> Downloadeaza actele </a>
-                                        <div>
-                                        <label for="avatar"  class ="h2 mr-2 mt-5" >Incarca actele completate:</label>
-                                        <input type="file" id="completatebanca" name="completatebanca" accept="image/*,.pdf">
+                                    <form method = "post">
+                                        <div class="documents" id="documents">
+                                            <a class= "download-button btn btn-primary" id = "download-button" target="_blank"> Downloadeaza actele </a>
+                                            <div>
+                                                <label for="avatar"  class ="h2 mr-2 mt-5" >Incarca actele completate:</label>
+                                                <input type="file" id="completatebanca" name="completatebanca" accept="image/*,.pdf">
+                                                </div>
+                                            <button type="submit" class = "btn btn-primary mt-4">Salveaza</button>
                                         </div>
-                                        <button type="submit" class = "btn btn-primary mt-4">Salveaza</button>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
