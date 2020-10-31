@@ -17,9 +17,13 @@ def registerbanca_post():
     # TODO: make sure current_user is admin
     if request.form['email'] and request.form['psw'] and request.form['name']:
         hashed_password = bcrypt.generate_password_hash(request.form["psw"]).decode('utf-8')
-        bank = models.Bank(email=request.form["email"], password=hashed_password,
-                           name=request.form['name'], documents=request.files['documents'].read())
+        bank = models.Bank(name=request.form['name'], documents=request.files['documents'].read())
         db.session.add(bank)
+
+        bank = models.Bank.query.filter_by(name=request.form['name']).first()
+        bank_user = models.Users(bank_id=bank.id, email=request.form['email'], password=hashed_password)
+        db.session.add(bank_user)
+
         db.session.commit()
     else:
         print("Incomplete form data")

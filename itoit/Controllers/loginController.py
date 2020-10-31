@@ -7,15 +7,7 @@ from flask import request, render_template, flash, redirect, url_for
 @app.route('/login', methods=['POST'])
 def login():
     data = request.form.to_dict()
-    print(data)
-
-    user = models.Users.query.filter_by(email=data["email"]).first()
-
-    if not user:
-        user = models.Bank.query.filter_by(email=data["email"]).first()
-    
-    if not user:
-        user = models.TradeRegister.query.filter_by(email=data["email"]).first()
+    user = db.session.query(models.Users).filter_by(email=data["email"]).first()
 
     if not user:
         flash("Email or password is invalid!")
