@@ -16,7 +16,7 @@ def firms():
             "register_documents_approved": firm.register_documents_approved,
             "factura_capital_url": flask.url_for("firm_factura_capital", id=firm.id),
             "factura_capital_approved": firm.factura_capital_approved,
-            "acte_complete_url": flask.url_for("firmcompletedocuments", id=firm.id)
+            "acte_complete_url": flask.url_for("firm_complete_documents", id=firm.id)
         })
     return flask.jsonify(ret)
 
@@ -36,6 +36,6 @@ def firm_factura_capital(id):
     return app.response_class(firm.factura_capital, mimetype='application/pdf')
 
 @app.route('/firmcompletedocuments/<int:id>')
-def firm_factura_capital(id):
+def firm_complete_documents(id):
     firm = models.Firm.query.filter(models.Firm.id==id).filter(models.Firm.user_id==current_user.id).first()
     return app.response_class(firm.complete_documents, mimetype='application/pdf')
