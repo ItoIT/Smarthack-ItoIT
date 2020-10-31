@@ -5,10 +5,18 @@ import flask
 
 @app.route('/register', methods=['POST'])
 def register():
-    if flask.request.method == 'POST':
-        data = request.json
+    data = request.json
+    register(data)
+    return flask.render_template('index.jinja', user=user)
 
-        user = models.Users(email=data["email"], password=data["password"])
-        db.session.add(user)
-        db.session.commit()
-        return flask.render_template('index.jinja', user=user)
+
+def rand_string(length=32):
+    letters = string.ascii_letters + string.digits
+    return ''.join(random.choice(letters) for i in range(length))
+
+
+def register(form):
+    hashed_password = bcrypt.generate_password_hash(form["password"]).decode('utf-8')
+    user = models.Users(email=form["email"], password=hashed_password)
+    db.session.add(user)
+    db.session.commit()
