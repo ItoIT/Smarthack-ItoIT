@@ -6,4 +6,4 @@ from itoit import app
 @app.route("/", methods=['GET'])
 @app.route("/index", methods=['GET'])
 def home():
-    return render_template("index.jinja")
+    return render_template("index.jinja", user=current_user)

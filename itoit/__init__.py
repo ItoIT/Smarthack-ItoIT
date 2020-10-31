@@ -12,11 +12,12 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = settings.sqlalchemy_track_modific
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 Bootstrap(app)
-# login_manager = LoginManager(app)
-# login_manager.login_view = 'login'
-# login_manager.login_message_category = 'info'
-# login_manager.init_app(app)
+login_manager = LoginManager(app)
+login_manager.login_view = 'login'
+login_manager.login_message_category = 'info'
+login_manager.init_app(app)
 
 from .Views import homepageView
-from .Views import registerView
+
+from .Controllers import registerController
 
