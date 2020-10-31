@@ -3,28 +3,28 @@ from flask_login import login_user, current_user
 from itoit.Models import models
 from flask import jsonify, request
 
+import base64
+
 import requests
 
 @app.route("/readIdCard", methods=["POST"])
 def readIdCard():
 
-    print(request.files)
     url = "https://accurascan.com/api/v4/ocr"
+
+    image_bytes = request.files["image"].read()
+    base64Image = base64.b64encode(image_bytes)
 
     headers = {
         "Api-Key": "1604168001EBhvM9bqrlHuKYrc77rBCSpkANId5WJyc0MnIgKx"
     }
 
-
-
     data = {
         "country_code": "ROU",
         "card_code": "RONID",
-        "scan_image": request.files["image"].read()
+        "scan_image_base64": base64Image
     }
-
-    print(request.files["image"].read())
-
+    
     response = requests.post(url, headers=headers, data=data, timeout=None)
 
     print(response.json())
