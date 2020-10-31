@@ -51,4 +51,4 @@ class Firm(db.Model):
     complete_documents = db.Column(db.LargeBinary, nullable=True)
 
     user = relationship("Users", backref="users", foreign_keys=[user_id])
-    #bank = relationship("Bank", backref="bank", foreign_keys=[bank_id])
+    bank = relationship("Bank", backref="firmbank", foreign_keys=[bank_id])
