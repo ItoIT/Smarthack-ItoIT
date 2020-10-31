@@ -86,3 +86,6 @@ input[type="radio"]
       font-size:28px !important;
       font-weight:550;
   }
+  .download-button {
+    color:white !important;
+}
