@@ -9,7 +9,7 @@ from itoit.Models import models
 @app.route("/registerbanca", methods=['GET'])
 def registerbanca_get():
     # TODO: make sure current_user is admin
-    return render_template("registerbanca.jinja")
+    return render_template("registerbanca.jinja", user=current_user)
 
 
 @app.route("/registerbanca", methods=['POST'])
