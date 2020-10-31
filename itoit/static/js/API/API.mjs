@@ -28,5 +28,20 @@ export function getUserBank() {
             return [];
         });
 }
+export function getONRCS() {
+    const endpoint_data = {
+        method: "GET",
+    };
+    var url = "/registers";
+    return fetch(url, endpoint_data)
+        .then(res => res.json())
+        .then((data) => {
+            return data;
+        })
+        .catch(e => {
+            console.log(e);
+            return [];
+        });
+}
 
 
