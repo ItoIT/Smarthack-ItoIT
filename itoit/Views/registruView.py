@@ -6,4 +6,4 @@ from itoit import app
 
 @app.route("/registru", methods=['GET'])
 def registru():
-    return render_template("registru.jinja")
+    return render_template("registru.jinja", user=current_user)
