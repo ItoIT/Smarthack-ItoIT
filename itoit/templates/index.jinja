@@ -1,0 +1,340 @@
+{% extends "layout.jinja" %}
+
+{% block links %}
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/aos.css">
+    <link rel="stylesheet" href="static/fonts/google/Muli.css">
+    <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="static/fonts/flaticon/font/flaticon.css">
+{% endblock %}
+
+{% block content %}
+    <div id="fb-root"></div>
+     <div class="intro-section" id="home-section">
+        <div class="slide-1" data-stellar-background-ratio="1"
+            style="background: linear-gradient(rgba(52, 58, 64, 0.6), rgba(52, 58, 64, 0.6)), url('static/images/meditatii_informatica.webp');
+                   background-size: cover;
+                   background-position: center;
+                   background-repeat: no-repeat;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 mb-1 mt-4">
+                                <div class="text1">
+                                    {# Main page stuff #}
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="site-section" id="programs-section" name="programs-section">
+        {# <div class="container">
+            <div class="row mb-5 justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 class="section-title">Mediu propice învățării</h2>
+                      <p class ="mb-5">Ți-am pregătit mediul potrivit pentru dezvoltarea ta în informatică. Am creat unelte pentru tine pentru a îți oferi o experiență completă de învațare.
+                      </p>
+                </div>
+            </div>
+            <div class="row mb-5 mt-3 align-items-center vast-option">
+                <div class="col-lg-4 col-md-5 col-sm-6 col-10 mb-5 mt-5 ml-auto mr-auto" data-aos="fade-up">
+                        <h2 class="text-black mb-4 text-center  text-sm-left">Gata cu metodele învechite!</h2>
+                        <p class="mb-2 mb-md-5">
+                            În multe licee din România nu se pune accentul pe informatică, deoarece puțini profesori au o pregătire de actualitate in acest domeniu,
+                            unde cunoașterea evoluează exponențial. Pentru a-l face accesibil, echipa noastră vă pune la dispoziție atât tehnologii de ultimă
+                            generație, cât și informații actualizate.
+                        <!--<h2 class="text-black mb-4 text-center  text-sm-left">Gata cu profesorii dezinteresați!</h2>
+                        <p class="mb-2 mb-md-5">
+                            În multe licee din România nu se pune accentul pe informatică, profesorii preferând să facă altceva în această oră.
+                            Având în vedere că acest domeniu evoluează de la an la an, ce te poate învăța un profesor care și-a făcut pregătirea cu 20-30 de ani în urmă?-->
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-6 col-10 mb-5 mt-5 ml-auto mr-auto" data-aos="fade-up">
+                    <h2 class="text-black mb-4  mt-5 text-center  text-sm-left">Atinge-ți adevăratul potențial!</h2>
+                    <p class="mb-2 mb-md-5">Unii profesori nu sunt compatibili cu personalitatea elevului.
+                        De aceea, echipa noastră este formată din studenți, mult mai apropiați de vârsta si nevoile elevului decât profesorul de la clasă.
+                        Lecțiile se țin sub forma unor ședințe 1 la 1, astfel accentul este pus pe tine, nu pe întreg colectivul clasei.
+                </div>
+                
+            </div>
+            <div class="row mb-5 mt-5 align-items-center use-our-tools justify-content-center ">
+                <div class="col-lg-4 col-md-5 col-sm-6 col-8 mb-4 ml-auto mr-auto order-1 order-sm-2" data-aos="fade-up">
+                        <img alt="Image" class="img-fluid online-call-image"
+                            src="static/images/meditatii_informatica_conversatie.jpg">
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-6 col-11 mb-4 ml-auto mr-auto order-2 order-sm-1" data-aos="fade-up" >
+                    <h2 class="text-black mb-4 text-center text-sm-left">Lecții online</h2>
+	                <p class="mb-4">
+                         Cum? Unde? 
+                         Lecțiile noastre se desfășoară online, pe serverul nostru de Discord.
+                         Vei avea parte de o întâlnire exclusivă 1 la 1 cu unul dintre profesorii noștri.
+                         Poți descărca aplicația Discord de <a class= "anchor-link" href = https://discord.com/new/download> aici.</a>
+                        Alatură-te serverului nostru prin acest <a class="invitation-link" href = "https://discord.gg/NgNaAQm"> link de invitație. </a>
+                        Vei avea nevoie de PC-ul tău, un microfon și de mult entuziasm!
+                        
+                    </p>
+                </div>
+                
+            </div>
+            <div class="row mb-3 mt-3 align-items-center vast-option">
+               
+                <div class="col-lg-4 col-md-5 col-sm-6 col-9 mb-5 mt-5 ml-auto mr-auto order-2" data-aos="fade-up">
+                    <h2 class="text-black mb-4 text-center text-sm-left">Flexibilitate in opțiuni</h2>
+	                <p class="mb-2 mb-md-5">În funcție de obiectivele și interesele tale, putem lucra în oricare dintre limbajele C++, Python, Java, Haskell, PHP, Javascript, HTML, CSS și să descoperim chiar și altele împreună.</p>
+                </div>
+                 <div class="col-lg-4 col-md-5 col-sm-6 col-10 mb-4 ml-auto mr-auto order-1" data-aos="fade-up">
+                    <img alt="Image" class="img-fluid"
+                        src="static/images/which_programming_language_to_learn_thumb800_thumb800.webp">
+                </div>
+            </div>
+            <div class="row mb-5 mt-5 align-items-center use-our-tools">
+                <div class="col-lg-4 col-md-5 col-sm-6 col-10 mb-5 mt-5 mr-auto ml-auto order-2" data-aos="fade-up">
+                    <img alt="Image" class="img-fluid" src="static/images/meditatii_informatica_graf.jpeg">
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-6 col-10 mr-auto ml-auto order-1" data-aos="fade-up" >
+                    <h2 class="text-black mb-4 text-center text-sm-left">Folosește ustensilele</h2>
+                    <p class="mb-3 mb-md-3"> Chiar dacă nu vrei să înveți alături de noi, poți folosi gratuit IDE-ul, Graph editor-ul și toate lucrurile prezente pe site.
+                    </p>
+                    <div class="d-flex align-items-center custom-icon-wrap mb-5 col-lg-4 col-md-5 col-sm-6 col-8 ide-graph-button">
+                        <div><a class="btn btn-primary " href="ide">Code editor</a></div>
+                        <div class="d-flex align-items-center custom-icon-wrap">
+                        <div class="Graph-Editor-btn"><a class="btn btn-primary " href="graph">Graph Editor</a></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="row mb-5 mt-5 align-items-center vast-option">
+                <div class="col-lg-4 col-md-5 col-sm-6 col-10 mb-5 mt-5 ml-auto mr-auto" data-aos="fade-up">
+                        <h2 class="text-black mb-4 mt text-center  text-sm-left">Spune-le prietenilor!</h2>
+                        <p class="mb-2 mb-md-5">Pentru fiecare prieten adus de tine care se înscrie pe ItoIT
+                        și își programează o lecție plătită, primești o lecție gratis. 
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-6 col-10 mb-5 mt-5 ml-auto mr-auto" data-aos="fade-up">
+                    <h2 class="text-black mb-4  mt-5 text-center  text-sm-left">Prima lecție gratis</h2>
+                    <p class="mb-2 mb-md-5">Vrei să vezi dacă rezonezi cu noi și putem continua procesul de învățare împreună?
+                    Ai ocazia să faci asta în prima lecție care este gratuită. Rezervă prima lecție acum! Nu ai nimic de pierdut.
+                </div>
+                
+            </div>
+        
+            <div class="row mb-5 mt-5 align-items-center use-our-tools">
+                <div class="col-lg-4 col-md-5 col-sm-6 col-8 mb-5 mr-auto ml-auto order-1 order-sm-2" data-aos="fade-up">
+                    <img alt="Image" class="img-fluid about-image" src="static/images/lessons.webp">
+                </div>
+                <div class="col-lg-4 col-md-5 col-sm-6 col-10 mr-auto ml-auto order-2 order-sm-1" data-aos="fade-up" >
+                    <h2 class="text-black mb-4 mt-5 text-center  text-sm-left">Sistemul de rezervări</h2>
+                    <p class="mb-2 mb-md-5"> Lecțiile se desfășoară în fiecare zi între orele 8 și 20, iar fiecare lecție durează 2 ore. Tu alegi ziua, ora și profesorul. Poți accesa pagina de rezervări din meniul din partea dreaptă sau de <a href ="/lessons" class="anchor-link">aici.</a>
+                  </p>
+                </div>
+            </div>
+            <div class="row mb-5 mt-5 align-items-center vast-option">
+                <div class="col-lg-4 col-md-5 col-sm-6 col-10 mb-5 ml-auto mr-auto order-2" data-aos="fade-up">
+                    <h2 class="text-black mb-4 mt-5 text-center  text-sm-left">Evoluăm împreună!</h2>
+                    <p class="mb-2 mb-md-5">Așa cum noi te îndrumăm pentru a-ți dezvolta aptitudinile în informatică și tu ne poți ajuta să ne îmbunătățim serviciile. Spune-ne feedback-ul tău în secțiunea de contact.</p>
+
+                </div>
+                 <div class="col-lg-4 col-md-5 col-sm-6 col-8 mb-5 mt-5 ml-auto mr-auto order-1" data-aos="fade-up">
+                    <img alt="Image" class="img-fluid about-image"
+                        src="static/images/feedback2.jpg">
+                </div>
+            </div>
+        </div> #}
+    </div>
+    <div class="site-section" id="teachers-section" name="teachers-section">
+        {# <div class="container">
+            <div class="row mb-5 justify-content-center">
+                <div class="col-lg-7 mb-5 text-center" data-aos="fade-up" data-aos-delay="500">
+                    <h2 class="section-title">Profesorii</h2>
+	                <p class="mb-5">
+                        Profesorii care te vor antrena sunt studenți, deci le va fi mult mai ușor să înțeleagă provocările cu care te confrunți în procesul de învățare,
+                        deoarece au trecut și ei prin aceleași etape de formare, nu cu mulți ani în urmă.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                
+                 <div class="col-md-10 col-lg-5 mb-4 ml-auto mr-auto" data-aos="fade-up">
+                    <div class="teacher text-center">
+                        <img alt="Image" class="img-fluid  rounded-circle  mb-6 mx-auto"
+                            src="static/images/BazavanCristian.jpg">
+                        <div class="py-2 teacher-details">
+                            <h3 class="text-black">Cristian Bazavan</h3> 
+                            <p class="faculty">Student în anul 3, Facultatea de Matematică si Informatică, București.</p>
+                            <p class="intern">Bitdefender Intern 2019</p>
+                            <p class="description">
+                            De-a lungul timpului am ajutat mai mulți prieteni să învețe programare, pentru Bacalaureat sau admiterea la facultate. Cea mai mare satisfacție, pentru mine, este atunci când cineva care nu a înțeles niciodată informatica, reuseste sa-și atingă obiectivele cu ajutorul meu.
+Sunt un om ambițios și motivat care lucrează din greu pentru a-și atinge țelurile.
+Consider că în viață cel mai important este să faci ceea ce îți place și iubești cu adevărat. Doar așa poți deveni cel mai bun în domeniul tău.
+                            
+                            </p>
+                            <div class = "social-media">
+                                <a href = "https://www.instagram.com/bazy.cristi/?hl=ro"> <i class="fab fa-instagram fa-2x instagram"></i> </a>
+                                <a href = "https://www.facebook.com/bazy.cristi/"><i class="fab fa-facebook fa-2x facebook"></i></a>
+                                <a href = "https://www.linkedin.com/in/cristian-valeriu-bazavan-1136b9198/"><i class="fab fa-linkedin fa-2x linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-5 mb-4 ml-auto mr-auto" data-aos="fade-up">
+                    <div class="teacher text-center">
+                        <img alt="Image" class="img-fluid w-200 rounded-circle  mb-4 mx-auto"
+                            src="static/images/AlexBlagescu.jpeg">
+                        <div class="py-2 teacher-details">
+                            <h3 class="text-black">Alex Blagescu</h3> 
+                            <p class="faculty">Student în anul 3, Facultatea de Matematică si Informatică, București.</p>
+                            <p class="intern">Bitdefender Intern 2019</p>
+                            <p class="description">Mă consider o persoană dinamică ce se adaptează ușor în orice situație. Sunt de părere că, pentru a avea succes cel mai important aspect este să îți stabilești obiectivele și să îți păstrezi determinarea dacă doresti să le duci la capăt. Pasiunea pentru IT am dezvoltat-o încă din liceu, unde am participat la diferite concursuri și olimpiade. Analitic din fire, îmi place să îmi organizez task-urile, să găsesc soluții la orice problemă o întâlnesc și încerc tot timpul să experimentez lucruri noi.</p>
+                            <div class = "social-media">
+                                <a href = "https://www.instagram.com/blagescu/?hl=ro"> <i class="fab fa-instagram fa-2x instagram"></i> </a>
+                                <a href = "https://www.facebook.com/alex.blagescu.9"><i class="fab fa-facebook fa-2x facebook"></i></a>
+                                <a href = "https://www.linkedin.com/in/alex-george-blagescu-ab16b8198/"><i class="fab fa-linkedin fa-2x linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class ="row">
+                <div class="col-md-10 col-lg-5 mb-4 ml-auto mr-auto" data-aos="fade-up">
+                    <div class="teacher text-center">
+                        <img alt="Image" class="img-fluid w-200 rounded-circle  mb-4 mx-auto"
+                            src="static/images/MihaiPreda.jpg">
+                        <div class="py-2 teacher-details">
+                            <h3 class="text-black">Mihai Preda</h3> 
+                            <p class="faculty">Student în anul 2, Facultatea de Matematică si Informatică, București.</p>
+                            <p class="intern">Google Intern 2020</p>
+                            <p class="description">Curios și entuziast din fire, prima întâlnire cu informatica a fost cu siguranță dragoste la prima vedere, în clasa a 9-a. Adrenalina din timpul concursurilor, conexiunile din spatele problemelor, ambiția si determinarea mi-au pavat drumul atât către câstigarea multor medalii la concursuri și olimpiade, cât și către un internship de succes la Google.
+Doresc să dau mai departe din pasiunea mea și să-i ajut și pe cei din jurul meu să își atingă potențialul, setând și descoperind împreună noi obiective în domeniul IT.</p>
+                            <div class = "social-media">
+                                <a href = "https://www.instagram.com/preda6015/?hl=ro"> <i class="fab fa-instagram fa-2x instagram"></i> </a>
+                                <a href = "https://www.facebook.com/profile.php?id=100007531338463"><i class="fab fa-facebook fa-2x facebook"></i></a>
+                                <a href = "https://www.linkedin.com/in/mihai-dragos-preda/"><i class="fab fa-linkedin fa-2x linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-5 mb-4 ml-auto mr-auto" data-aos="fade-up">
+                    <div class="teacher text-center">
+                        <img alt="Image" class="img-fluid w-200 rounded-circle  mb-4 mx-auto"
+                            src="static/images/EduardDorneanu.jpeg">
+                        <div class="py-2 teacher-details">
+                            <h3 class="text-black">Eduard Dorneanu</h3> 
+                            <p class="faculty">Student în anul 3, Facultatea de Matematică si Informatică, București.</p>
+                            <p class="intern">Bitdefender Intern 2019</p>
+                            <p class="description">Pasionat de la o vârstă frageda de tehnologie, informatică și calculatoare, am decis foarte devreme că viitorul meu va fi în acest domeniu. Nicio clipă n-am regretat decizia pe care am luat-o, deoarece prin intermediul acestei pasiuni am întâlnit oameni minunați și am legat prietenii strânse. Iubesc acest domeniu deoarece este în plină evoluție, mereu ai ceva nou de învațat, fapt pentru care doresc să ofer și altor oameni cunoștințele pe care le-am acumulat în acești ani.</p>
+                            <div class = "social-media">
+                               <a href = "https://www.instagram.com/dorneanu_eduard/?hl=ro"> <i class="fab fa-instagram fa-2x instagram"></i> </a>
+                                <a href = "https://www.facebook.com/dorneanueduardgabriel"><i class="fab fa-facebook fa-2x facebook"></i></a>
+                                <a href = "https://www.linkedin.com/in/dorneanu-eduard/"><i class="fab fa-linkedin fa-2x linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div> #}
+    </div>
+
+    <div class="site-section bg-light" id="faq-section" name="faq-section">
+        {# <div class="future-blobs">
+            <div class="blob_2">
+                <img alt="Image" src="static/images/blob_3.svg">
+            </div>
+            <div class="blob_1">
+                <img alt="Image" src="static/images/blob_4.svg">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row mb-1 mb-md-5 justify-content-center" data-aos="fade-up">
+                <div class="col-lg-7 text-center">
+                    <h2 class="section-title">Întrebări frecvente</h2>
+                </div>
+            </div>
+ 	            <div class="accordion">
+                <div class="accordion-item" data-aos="fade-up">
+                    <div class="accordion-item-header">
+                    Care este durata unei lecții?
+                    </div>
+                    <div class="accordion-item-body">
+                    <div class="accordion-item-body-content">
+                        O lecție durează 2 ore.
+                    </div>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-up">
+                    <div class="accordion-item-header">
+                    Ce se întamplă dacă în timpul lecției se întrerupe conexiunea între elev și profesor?
+                    </div>
+                    <div class="accordion-item-body">
+                    <div class="accordion-item-body-content">
+                    În functie de timpul rămas din lecția respectivă, fie vei primi o altă lecție gratis, fie minutele rămase vor fi adăugate în plus la următoarea lecție.   
+                    </div>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-up">
+                    <div class="accordion-item-header">
+                    Cum aleg un profesor atunci când nu cunosc pe niciunul dintre ei?
+                    </div>
+                    <div class="accordion-item-body" >
+                    <div class="accordion-item-body-content">
+                        În prima lecție vor fi prezenți minimum doi profesori, iar în funcție de nivelul și de nevoile tale, aceștia îți vor recomanda cu care dintre ei să continui pregătirea.
+                    </div>
+                    </div>
+                </div>
+                <div class="accordion-item " data-aos="fade-up">
+                    <div class="accordion-item-header">
+                    Care este prețul unei lecții?
+                    </div>
+                    <div class="accordion-item-body">
+                    <div class="accordion-item-body-content">
+                        O lecție costa 100 de monede, care pot fi cumpărate la prețul de 69 de lei. Nu uita să verifici pachetele noastre promoționale și abonamentele care oferă diferite reduceri. Vezi <a href ="/addfunds"> aici </a>  ofertele noastre.  
+                    </div>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-up">
+                    <div class="accordion-item-header">
+                    Cum decurge o lecție?
+                    </div>
+                    <div class="accordion-item-body">
+                    <div class="accordion-item-body-content">
+                        Lecțiile sunt ținute pe serverul nostru de Discord sub forma unor ședințe 1 la 1 între profesor și elev. La final, atât profesorul cât și elevul vor acorda o notă lecției, cele două ore fiind urmate de o scurtă sesiune de feedback.
+                    </div>
+                    </div>
+                </div>
+                <div class="row mb-7 justify-content-center" data-aos="fade-up">
+                <div class="col-lg-9 text-center">
+                    <h2 class="section-footer">Nu ți-am raspuns la toate întrebările?</h2>
+                </div>
+            </div>
+            </div>
+        </div> #}
+    </div>
+    <div class="site-section bg-light" id="contact-section" name="contact-section">
+        {# <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-7 text-center" data-aos="fade-up">
+                    <h2 class="section-title mb-3">Contactează-ne</h2>
+                    <p class="text-center contact-first-p">Aici poți trimite un mesaj echipei ItoIT. Ne poți adresa orice întrebare. De asemenea
+                    ne poți contacta prin: 
+                    <p class = "contact-p">Mail: <b>contact@itoit.ro</b> </p>
+                    <p class = "contact-p mb-5 ">Telefon / WhatsApp:<b> 0740 764 496 </b> </p>
+                </div>
+            </div>
+        </div> #}
+    </div>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+{% endblock scripts %}
