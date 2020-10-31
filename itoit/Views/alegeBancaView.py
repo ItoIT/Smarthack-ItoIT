@@ -4,6 +4,6 @@ from flask_login import login_user, current_user, logout_user, login_required
 from itoit import app
 
 
-@app.route("/alegebanmca", methods=['GET'])
+@app.route("/alegebanca", methods=['GET'])
 def alegebanca():
     return render_template("alegebanca.jinja")
