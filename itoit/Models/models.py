@@ -48,6 +48,7 @@ class Firm(db.Model):
     register_documents_approved = db.Column(db.Boolean, default=False)
     factura_capital = db.Column(db.LargeBinary, nullable=True)
     factura_capital_approved = db.Column(db.Boolean, default=False)
+    complete_documents = db.Column(db.LargeBinary, nullable=True)
 
     user = relationship("Users", backref="users", foreign_keys=[user_id])
     #bank = relationship("Bank", backref="bank", foreign_keys=[bank_id])
