@@ -15,7 +15,7 @@ def login():
         user = models.Bank.query.filter_by(email=data["email"]).first()
     
     if not user:
-        user = models.TradeRegister.query.filter_by(email=data["email"]).first()--
+        user = models.TradeRegister.query.filter_by(email=data["email"]).first()
 
     if not user:
         flash("Email or password is invalid!")
