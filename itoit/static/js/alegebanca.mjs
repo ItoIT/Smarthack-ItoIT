@@ -10,7 +10,7 @@ function addBank(numeBanca, pdfBanca, idBanca) // functie care adauga in lista d
     let input = document.createElement("input");
     input.type="radio";
     input.name = "banca";
-    input.id = numeBanca;
+    input.id = idBanca;
     input.classList = "checkbox";
     input.addEventListener('click', function (){
         let downloadButton = document.querySelector("#download-button");
