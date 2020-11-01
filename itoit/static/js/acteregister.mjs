@@ -3,13 +3,13 @@ import {getFirmsProgress} from "./API/API.mjs";
 async function createFirms()
 {
     getFirmsProgress().then((data) => { 
+        const firmsContainer = document.querySelector("#firms-container");
+        let firmsCounter = 0;
         for(let firm of data)
         {
             if(firm.feedback || firm.register_documents_approved === true) {
                 continue;
             } 
-            const firmsContainer = document.querySelector("#firms-container");
-    
             const title = document.createElement("div");
             title.classList.add("h2");
             title.innerHTML = "<br>Firma #" + firm.id;
@@ -70,6 +70,9 @@ async function createFirms()
             const submit = document.createElement("input");
             submit.type = "submit";
             form.appendChild(submit);
+        }
+        if(firmsCounter === 0) {
+            firmsContainer.innerHTML = "Nicio firma in asteptare.";
         }
     })
 }
