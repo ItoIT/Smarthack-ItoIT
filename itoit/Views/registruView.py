@@ -18,5 +18,4 @@ def registru_post():
     firm.feedback = None
     db.session.add(firm)
     db.session.commit()
-    return redirect(url_for("registru_get"))
-
+    return redirect(url_for("acte_get"))

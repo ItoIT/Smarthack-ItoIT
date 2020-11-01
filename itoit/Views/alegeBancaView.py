@@ -18,6 +18,7 @@ def alegebanca_post():
     firm.name = request.form["name"]
     firm.bank_id = request.form["banca"]
     firm.bank_documents = request.files['completatebanca'].read()
+    firm.feedback = None
     db.session.add(firm)
     db.session.commit()
-    return redirect(url_for("alegebanca_get"))
+    return redirect(url_for("acte_get"))

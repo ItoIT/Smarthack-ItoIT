@@ -17,10 +17,7 @@ function addBank(numeBanca, pdfBanca, idBanca) // functie care adauga in lista d
         downloadButton.setAttribute('href', pdfBanca)
         checkedBank();
     });
-    let label = document.createElement("label");
-    label.setAttribute("for",numeBanca);
-    
-    label.innerHTML = numeBanca;
+   
     
     box.appendChild(input);
     box.appendChild(label);
