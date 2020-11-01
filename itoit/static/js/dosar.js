@@ -1,7 +1,21 @@
-import{ getFirmsProgress } from "./API/API.mjs";
+
 
 console.log("aaaa");
-
+function getFirmsProgress() {
+    const endpoint_data = {
+        method: "GET",
+    };
+    var url = "/firms";
+    return fetch(url, endpoint_data)
+        .then(res => res.json())
+        .then((data) => {
+            return data;
+        })
+        .catch(e => {
+            console.log(e);
+            return [];
+        });
+}
 function getUser()
 {
     const endpoint_data = {
@@ -143,12 +157,28 @@ getUser().then((data) => {
     allStradaFirmaNr.forEach(a => {
         a.innerHTML = stradaFirmaNr;
     });
+   
     getFirmsProgress().then((data) => {
         let allNumeFirma = document.querySelectorAll("#nume-firma");
         allNumeFirma.forEach(a => {
             a.innerHTML = data[0]['name'];
         });
         })
+    let anNastere = cnp[1]+cnp[2];
+    let lunaNastere = cnp[3]+ cnp[4];
+    let ziNastere = cnp[5] + cnp[6];
+    let nastere = ziNastere + "." + lunaNastere + "." + anNastere;
+    let allNastere = document.querySelectorAll("#data-nastere");
+    allNastere.forEach(a => {
+        a.innerHTML = nastere;
+    });
+    
+    let date = new Date();
+    let allData = document.querySelectorAll("#data");
+    allData.forEach(a => {
+        a.innerHTML = date.getDate() + "." + (date.getMonth() + 1) + "." + date.getUTCFullYear();
+    });
+
     console.log(stradaNr);
 })
 
