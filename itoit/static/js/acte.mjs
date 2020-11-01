@@ -59,7 +59,9 @@ function updateProgress() // functie care updateaza progresul de creare a firmei
                 denied[2].style.display = 'none';
                 let completed = document.querySelector("#firm-completed");
                 completed.style.display = 'block';
-                completed.setAttribute('href',data['acte_complete_url']);
+
+                let completedUrl = document.querySelector("#completed-url");
+                completedUrl.setAttribute('href',data[0]['acte_complete_url']);
             }
         }
         else
