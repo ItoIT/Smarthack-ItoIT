@@ -90,3 +90,6 @@ input[type="radio"]
   .already-have-bank, .bank-choice{
       display:none;
   }
+  #firm-name {
+    width: 50%;
+  }
