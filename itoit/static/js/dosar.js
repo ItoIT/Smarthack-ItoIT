@@ -117,7 +117,7 @@ getUser().then((data) => {
     allSerie.forEach(a => {
         a.innerHTML = serie1;
     });
-    let allNr = document.querySelectorAll("#nr");
+    let allNr = document.querySelectorAll("#numar");
     allNr.forEach(a => {
         a.innerHTML = nr;
     });
