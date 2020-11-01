@@ -3,13 +3,14 @@ import {getFirmsProgress} from "./API/API.mjs";
 async function createFirms()
 {
     getFirmsProgress().then((data) => { 
+        const firmsContainer = document.querySelector("#firms-container");
+        let firmsCounter = 0;
         for(let firm of data)
         {
             if(firm.feedback || (firm.bank_documents_approved === true && firm.factura_capital_approved === true)) {
                 continue;
             } 
-            const firmsContainer = document.querySelector("#firms-container");
-    
+            firmsCounter++;
             const title = document.createElement("div");
             title.classList.add("h2");
             title.classList.add("mt-3");
@@ -94,6 +95,9 @@ async function createFirms()
             submit.type = "submit";
             submit.classList = "btn btn-primary";
             form.appendChild(submit);
+        }
+        if(firmsCounter === 0) {
+            firmsContainer.innerHTML = "Nicio firma in asteptare.";
         }
     })
 }
