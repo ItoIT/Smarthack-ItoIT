@@ -19,4 +19,3 @@ def registru_post():
     db.session.add(firm)
     db.session.commit()
     return redirect(url_for("acte_get"))
-
