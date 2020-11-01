@@ -554,7 +554,7 @@ h5,
 
 /* Navbar */
 .Experts {
-  color: #00d9b2;
+  color: #00d9b2 !important;
 }
 .site-logo {
   position: relative;
