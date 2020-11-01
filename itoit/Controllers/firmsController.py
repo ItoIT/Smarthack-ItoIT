@@ -34,9 +34,9 @@ def firms():
 @app.route('/firmbankdocuments/<int:id>')
 def firm_bank_documents(id):
     if current_user.bank_id is not None:
-        firm = models.Firm.query.filter(models.Firm.bank_id == current_user.bank_id).first()
+        firm = models.Firm.query.filter(models.Firm.id==id).filter(models.Firm.bank_id == current_user.bank_id).first()
     elif current_user.trade_register_id is not None:
-        firm = models.Firm.query.filter(models.Firm.trade_register_id == current_user.trade_register_id).first()
+        firm = models.Firm.query.filter(models.Firm.id==id).filter(models.Firm.trade_register_id == current_user.trade_register_id).first()
     else:
         firm = models.Firm.query.filter(models.Firm.id==id).filter(models.Firm.user_id==current_user.id).first()
     return app.response_class(firm.bank_documents, mimetype='application/pdf')
@@ -44,9 +44,9 @@ def firm_bank_documents(id):
 @app.route('/firmregisterdocuments/<int:id>')
 def firm_register_documents(id):
     if current_user.bank_id is not None:
-        firm = models.Firm.query.filter(models.Firm.bank_id == current_user.bank_id).first()
+        firm = models.Firm.query.filter(models.Firm.id==id).filter(models.Firm.bank_id == current_user.bank_id).first()
     elif current_user.trade_register_id is not None:
-        firm = models.Firm.query.filter(models.Firm.trade_register_id == current_user.trade_register_id).first()
+        firm = models.Firm.query.filter(models.Firm.id==id).filter(models.Firm.trade_register_id == current_user.trade_register_id).first()
     else:
         firm = models.Firm.query.filter(models.Firm.id==id).filter(models.Firm.user_id==current_user.id).first()
     return app.response_class(firm.register_documents, mimetype='application/pdf')
@@ -54,9 +54,9 @@ def firm_register_documents(id):
 @app.route('/firmfacturacapital/<int:id>')
 def firm_factura_capital(id):
     if current_user.bank_id is not None:
-        firm = models.Firm.query.filter(models.Firm.bank_id == current_user.bank_id).first()
+        firm = models.Firm.query.filter(models.Firm.id==id).filter(models.Firm.bank_id == current_user.bank_id).first()
     elif current_user.trade_register_id is not None:
-        firm = models.Firm.query.filter(models.Firm.trade_register_id == current_user.trade_register_id).first()
+        firm = models.Firm.query.filter(models.Firm.id==id).filter(models.Firm.trade_register_id == current_user.trade_register_id).first()
     else:
         firm = models.Firm.query.filter(models.Firm.id==id).filter(models.Firm.user_id==current_user.id).first()
     return app.response_class(firm.factura_capital, mimetype='application/pdf')
@@ -64,9 +64,9 @@ def firm_factura_capital(id):
 @app.route('/firmcompletedocuments/<int:id>')
 def firm_complete_documents(id):
     if current_user.bank_id is not None:
-        firm = models.Firm.query.filter(models.Firm.bank_id == current_user.bank_id).first()
+        firm = models.Firm.query.filter(models.Firm.id==id).filter(models.Firm.bank_id == current_user.bank_id).first()
     elif current_user.trade_register_id is not None:
-        firm = models.Firm.query.filter(models.Firm.trade_register_id == current_user.trade_register_id).first()
+        firm = models.Firm.query.filter(models.Firm.id==id).filter(models.Firm.trade_register_id == current_user.trade_register_id).first()
     else:
         firm = models.Firm.query.filter(models.Firm.id==id).filter(models.Firm.user_id==current_user.id).first()
     return app.response_class(firm.complete_documents, mimetype='application/pdf')
