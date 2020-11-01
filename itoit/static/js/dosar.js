@@ -1,6 +1,3 @@
-
-
-console.log("aaaa");
 function getFirmsProgress() {
     const endpoint_data = {
         method: "GET",
@@ -186,7 +183,3 @@ getUser().then((data) => {
 
     console.log(stradaNr);
 })
-
-let download = document.querySelector("#download");
-download.click();
-download.style.display = "none";
