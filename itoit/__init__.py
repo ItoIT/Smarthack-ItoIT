@@ -22,6 +22,7 @@ from .Controllers import loginController
 from .Controllers import banciController
 from .Controllers import registersController
 from .Controllers import firmsController
+from .Controllers import userController
 from .Controllers import cardReaderController
 
 from .Views import homepageView
