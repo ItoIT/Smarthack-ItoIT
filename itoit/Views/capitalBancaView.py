@@ -7,7 +7,8 @@ from itoit.Models import models
 
 @app.route("/capitalbanca", methods=['GET'])
 def capitalbanca_get():
-    return render_template("capitalbanca.jinja", user=current_user)
+    firm = models.Firm.query.filter(models.Firm.user_id==current_user.id).first()
+    return render_template("capitalbanca.jinja", user=current_user, firm=firm)
 
 @app.route("/capitalbanca", methods=['POST'])
 def capitalbanca_post():

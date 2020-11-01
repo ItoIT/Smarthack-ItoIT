@@ -45,10 +45,11 @@ class Bank(db.Model, UserMixin):
 class Firm(db.Model):
     __tablename__ = 'firm'
     id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     bank_id = db.Column(db.Integer, db.ForeignKey('bank.id'))
-    name = db.Column(db.String(100))
     trade_register_id = db.Column(db.Integer, db.ForeignKey('trade_register.id'))
+    iban = db.Column(db.String(40))
     bank_documents = db.Column(db.LargeBinary, nullable=True)
     bank_documents_approved = db.Column(db.Boolean, default=False)
     register_documents = db.Column(db.LargeBinary, nullable=True)

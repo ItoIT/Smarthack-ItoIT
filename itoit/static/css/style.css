@@ -2247,6 +2247,11 @@ header nav ul a:hover {
 .documents-color {
   color:white
 }
+.btn-save {
+  width: 180px;
+  height: 85px;
+  font-size: 30px;
+}
 #reward-section {
   background: #1D976C;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */

@@ -19,9 +19,11 @@ def acte_get():
 def acte_post():
     if current_user.bank_id is not None:
         firm = models.Firm.query.filter(models.Firm.id==request.form['firm']).filter(models.Firm.bank_id==current_user.bank_id).first()
-        if request.form['approve'] is not None:
+        if 'approve' in request.form:
             if firm.bank_documents_approved == False:
+                print(request.form)
                 firm.bank_documents_approved = True
+                firm.iban = request.form['iban']
             else:
                 firm.factura_capital_approved = True
         else:
@@ -30,7 +32,9 @@ def acte_post():
         db.session.commit()
     elif current_user.trade_register_id is not None:
         firm = models.Firm.query.filter(models.Firm.id==request.form['firm']).filter(models.Firm.trade_register_id==current_user.trade_register_id).first()
-        if request.form['approve'] is not None:
+        if 'approve' in request.form:
+            firm.register_documents_approved = True
+            firm.complete_documents = request.files['complete'].read()
             db.session.add(firm)
             db.session.commit()
         else:
