@@ -56,15 +56,33 @@ async function createFirms()
             label.setAttribute("for","approve");
             label.innerHTML = "Approve:"
 
-            const input = document.createElement("input");
-            input.setAttribute("id","approve");
-            input.setAttribute("type","checkbox");
-            input.classList = "checkbox";
+            const approveInput = document.createElement("input");
+            approveInput.setAttribute("id","approve");
+            approveInput.setAttribute("type","checkbox");
+            approveInput.classList = "checkbox";
             
             acceptDiv.appendChild(label);
-            acceptDiv.appendChild(input);
+            acceptDiv.appendChild(approveInput);
 
+            acceptDiv.innerHTML = 'Accept: ';
             form.appendChild(acceptDiv);
+
+            const ibanInput = document.createElement("input");
+            ibanInput.name = "iban";
+            ibanInput.style.marginBottom = "10px";
+            ibanInput.style.display = "none";
+            ibanInput.placeholder = "IBAN"
+            form.appendChild(ibanInput);
+
+            if(firm.bank_documents_approved === false) {
+                approveInput.onchange = (event) => {
+                    if(event.target.checked) {
+                        ibanInput.style.display = "block";
+                    } else {
+                        ibanInput.style.display = "none";
+                    }
+                }
+            }
 
             const firmInput = document.createElement("input");
             firmInput.type = "hidden";

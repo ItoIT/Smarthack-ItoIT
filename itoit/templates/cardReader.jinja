@@ -1,0 +1,78 @@
+{% extends "layout.jinja" %}
+
+{% block links %}
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/aos.css">
+    <link rel="stylesheet" href="static/css/cardReader.css">
+    <link rel="stylesheet" href="static/fonts/google/Muli.css">
+    <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="static/fonts/flaticon/font/flaticon.css">
+{% endblock %}
+
+{% block content %}
+    <div class="intro-section">
+        <div class="slide-1" data-stellar-background-ratio="1"
+            style="background: linear-gradient(rgba(52, 58, 64, 0.6), rgba(52, 58, 64, 0.6)), url('static/images/wooden-plank5.jpg');
+                   background-size: cover;
+                   background-position: center;
+                   background-repeat: no-repeat;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <div class="row align-items-center">
+                            <div class="offset-2 col-lg-8 mb-1 mt-4">
+                                {% if form: %}
+                                    <form action="/incarca-documente" method="POST" class="form-box" style="display:flex; flex-direction:column" >
+                                        <h3>Introduceti datele</h3>
+                                        <label for="name"> Nume </label>
+                                        <input type="text" id="name" name="name" value="{{form['data']['MRZdata']['last_name'] + ' ' + form['data']['MRZdata']['first_name']}}">
+                                        
+                                        <label for="cnp" class="mt-3"> CNP </label>
+                                        <input type="text" id="cnp" name="cnp" value="{{ form['data']['MRZdata']['other_id'][0] + form['data']['MRZdata']['date_of_birth'] + form['data']['MRZdata']['other_id'][1:] }}">
+                                        
+                                        <label for="serie" class="mt-3"> Serie si numar de buletin </label>
+                                        <input type="text" id="serie" name="serie" value="{{ form['data']['MRZdata']['document_no'] }}">
+                                        
+                                        <label for="domiciliu" class="mt-3"> Domiciliu </label>
+                                        <input type="text" id="domiciliu" name="domiciliu">
+                                        
+                                        <label for="adresa-sediu" class="mt-3"> Adresa sediu </label>
+                                        <input type="text" id="adresa-sediu" name="adresa-sediu">
+
+                                        <label for="coduri-caen" class="mt-3"> Coduri CAEN </label> 
+                                        <input type="text" id="coduri-caen" name="coduri-caen">
+
+                                        <button type="submit" class="btn btn-primary mt-4" id="submitReader">Incarca datele</button>
+                                    </form>
+                                {% endif %}
+
+                                {% if not form: %}
+                                    <form action="/readIdCard" method="POST" class="form-box" style="display:flex; flex-direction:column" enctype="multipart/form-data" id="readForm"> 
+                                        <label for="documents" class="mb-4"><span class="h4" style="font-size: 20 !important; font-weight: bold;">Va rugam incarcati o imagine care contine CI<span></label>
+                                        <input type="file" id="idCard" name="image" accept="image/*,.pdf">
+                                        <button type="submit" class="btn btn-primary mt-4" id="submitReader">Incarca</button>
+                                    </form>
+                                    <div class="d-none container-spinner">
+                                        <div class="spinner-border spinner-border-sm mt-4" role="status" aria-hidden="true"></div>
+                                        <h2 class="mt-4 mb-4">Documentul este in curs de scanare...</h2>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/cardReader.mjs') }}"></script>
+{% endblock scripts %}

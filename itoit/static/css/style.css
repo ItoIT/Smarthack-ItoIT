@@ -7,7 +7,7 @@ html {
 html,
 body {
   width: 100%;
-
+  background-color: #fff;
   margin: 0px;
   padding: 0px;
 }
@@ -79,7 +79,7 @@ body {
 }
 .form-box {
   padding: 40px;
-  background: #fff;
+  background-color: #fdfdfd;
   border-radius: 7px;
   min-width: 300px;
 }
@@ -458,7 +458,16 @@ h5,
     font-size: 3rem;
   }
 }
-
+.close-icon {
+  color: #fff;
+}
+.close-icon:hover {
+  color:#00d9b2;
+}
+.dropdown-icon:hover {
+  color:#00d9b2;
+  transition: 1s;
+}
 .play-single-big {
   width: 90px;
   height: 90px;
@@ -1007,9 +1016,9 @@ header nav ul a:hover {
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
 }
-.site-mobile-menu .site-mobile-menu-header .site-mobile-menu-close span:hover {
+/* .site-mobile-menu .site-mobile-menu-header .site-mobile-menu-close span:hover {
   color: #25262a;
-}
+} */
 .site-mobile-menu .site-mobile-menu-header .site-mobile-menu-logo {
   float: left;
   margin-top: 10px;
@@ -1749,11 +1758,11 @@ header nav ul a:hover {
 }
 
 .courses-entry-wrap {
-  margin-top: -282px;
+  margin-top: -210px;
 }
 @media (max-width: 1199.98px) {
   .courses-entry-wrap {
-    margin-top: -246px;
+    margin-top: -210;
   }
 }
 
@@ -1820,13 +1829,14 @@ header nav ul a:hover {
   pointer-events: none;
 }
 .future-blobs .blob_1 {
-  top: 100px;
+  top: 500px;
   right: -10rem;
   position: absolute;
   z-index: 0;
 }
 .future-blobs .blob_2 {
   left: -10rem;
+  top: 40px;
   position: absolute;
   z-index: 0;
 }
@@ -2236,4 +2246,76 @@ header nav ul a:hover {
 }
 .documents-color {
   color:white
+}
+.btn-save {
+  width: 180px;
+  height: 85px;
+  font-size: 30px;
+}
+#reward-section {
+  background: #1D976C;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #93F9B9, #1D976C);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.about-section{
+  background: url('./../images/about_us.jpg') no-repeat left;
+  background-size: 55%;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+.inner-container{
+  width: 55%;
+  float: right;
+  background-color: #fdfdfd;
+  padding: 100px;
+}
+
+.inner-container h1{
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.text{
+  font-size: 18px;
+  color: #545454;
+  line-height: 30px;
+  text-align: justify;
+  margin-bottom: 40px;
+}
+
+.skills{
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+@media screen and (max-width:1200px){
+  .inner-container{
+      padding: 80px;
+  }
+}
+
+@media screen and (max-width:1000px){
+  .about-section{
+      background-size: 100%;
+      padding: 100px 40px;
+  }
+  .inner-container{
+      width: 100%;
+  }
+}
+
+@media screen and (max-width:600px){
+  .about-section{
+      padding: 0;
+  }
+  .inner-container{
+      padding: 60px;
+  }
+}
+.close-icon {
+  color: #fff;
 }

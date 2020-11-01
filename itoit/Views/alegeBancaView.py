@@ -12,7 +12,12 @@ def alegebanca_get():
 
 @app.route("/alegebanca", methods=['POST'])
 def alegebanca_post():
-    firm = models.Firm(user_id=current_user.id, bank_id=request.form["banca"], bank_documents=request.files['completatebanca'].read())
+    firm = models.Firm.query.filter(models.Firm.user_id==current_user.id).first()
+    if firm is None:
+        firm = models.Firm(user_id=current_user.id)
+    firm.name = request.form["name"]
+    firm.bank_id = request.form["banca"]
+    firm.bank_documents = request.files['completatebanca'].read()
     db.session.add(firm)
     db.session.commit()
     return redirect(url_for("alegebanca_get"))
