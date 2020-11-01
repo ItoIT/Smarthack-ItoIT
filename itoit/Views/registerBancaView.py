@@ -27,4 +27,4 @@ def registerbanca_post():
         db.session.commit()
     else:
         print("Incomplete form data")
-    return redirect(url_for("registerbanca_get"))
+    return redirect(url_for("home"))

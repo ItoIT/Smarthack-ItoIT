@@ -30,4 +30,4 @@ def registerregister_post():
         db.session.commit()
     else:
         print("Incomplete form data")
-    return redirect(url_for("registerregister_get"))
+    return redirect(url_for("home"))
