@@ -21,11 +21,11 @@ def acte_post():
         firm = models.Firm.query.filter(models.Firm.id==request.form['firm']).filter(models.Firm.bank_id==current_user.bank_id).first()
         if 'approve' in request.form:
             if firm.bank_documents_approved == False:
-                print(request.form)
                 firm.bank_documents_approved = True
                 firm.iban = request.form['iban']
             else:
                 firm.factura_capital_approved = True
+                firm.feedback = None
         else:
             firm.feedback = request.form['feedback']
         db.session.add(firm)
@@ -34,11 +34,12 @@ def acte_post():
         firm = models.Firm.query.filter(models.Firm.id==request.form['firm']).filter(models.Firm.trade_register_id==current_user.trade_register_id).first()
         if 'approve' in request.form:
             firm.register_documents_approved = True
+            firm.feedback = None
             firm.complete_documents = request.files['complete'].read()
             db.session.add(firm)
             db.session.commit()
         else:
             firm.feedback = request.form['feedback']
         db.session.add(firm)
-        db.session.commit
+        db.session.commit()
     return redirect(url_for("acte_get"))
