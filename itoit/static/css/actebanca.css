@@ -51,6 +51,11 @@
   }
 }
 
+.feedback-textarea {
+    width: 100%;
+    min-height: 120px;
+}
+
 .spinner-border {
   color: #00d9b2;
   width: 10rem;
