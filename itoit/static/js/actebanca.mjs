@@ -2,7 +2,6 @@ import { getFirmsProgress } from "./API/API.mjs";
 
 async function createFirms() {
   getFirmsProgress().then((data) => {
-    console.log(data);
     const spinnerContainer = document.querySelector(".container-spinner");
     spinnerContainer.style.display = "none";
 
@@ -19,7 +18,6 @@ async function createFirms() {
     });
 
     if (filtered_data.length == 0) {
-      console.log("DA");
       const firmsContainer = document.querySelector("#firms-container");
       const notification = document.createElement("p");
       notification.classList.add("h2");
@@ -40,7 +38,7 @@ async function createFirms() {
 
         const title = document.createElement("div");
         title.classList.add("h2");
-        title.classList.add("mt-3");
+        // title.classList.add("mt-3");
         title.innerHTML = "<br>Firma #" + firm.id;
         firmsContainer.appendChild(title);
 
@@ -52,7 +50,7 @@ async function createFirms() {
         const documents = document.createElement("a");
         documents.classList.add("download-button");
         documents.classList.add("btn");
-        documents.classList.add("btn-secondary");
+        documents.classList.add("btn-primary");
         documents.target = "_blank";
         documents.href = firm.bank_documents_url;
         documents.innerHTML = "Downloadeaza actele";
@@ -62,7 +60,8 @@ async function createFirms() {
           const documents = document.createElement("a");
           documents.classList.add("download-button");
           documents.classList.add("btn");
-          documents.classList.add("btn-secondary");
+          documents.classList.add("btn-primary");
+          documents.classList.add("mt-3")
           documents.target = "_blank";
           documents.href = firm.factura_capital_url;
           documents.innerHTML = "Downloadeaza factura";
@@ -76,12 +75,15 @@ async function createFirms() {
 
         const textarea = document.createElement("textarea");
         textarea.name = "feedback";
+        textarea.classList.add("feedback-textarea");
         form.appendChild(textarea);
 
         const acceptDiv = document.createElement("div");
 
         const label = document.createElement("label");
         label.setAttribute("for", "approve");
+        label.classList.add("mb-3");
+        label.classList.add("mr-3");
         label.innerHTML = "Approve:";
 
         const approveInput = document.createElement("input");
@@ -98,6 +100,7 @@ async function createFirms() {
         ibanInput.name = "iban";
         ibanInput.style.marginBottom = "10px";
         ibanInput.style.display = "none";
+        ibanInput.classList.add("mb-3");
         ibanInput.placeholder = "IBAN";
         form.appendChild(ibanInput);
 
