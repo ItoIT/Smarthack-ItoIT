@@ -11,7 +11,9 @@ def acte_get():
         return render_template("actebanca.jinja", user=current_user)
     elif current_user.trade_register_id is not None:
         return render_template("acteregister.jinja", user=current_user)
-    return render_template("acte.jinja", user=current_user)
+
+    firm = models.Firm.query.filter(models.Firm.user_id == current_user.id).first()
+    return render_template("acte.jinja", user=current_user, firm=firm)
 
 @app.route("/acte", methods=['POST'])
 def acte_post():
