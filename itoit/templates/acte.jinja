@@ -27,14 +27,23 @@
                                     <div class = "h2">Aici ai toti pasii care trebuiesc urmati pentru a-ti deschide firma</div>
                                     <div class = "steps"> 
                                         <div class="step"> <a href="/alegebanca" class="step-a" id="/alegebanca"> 1. Alege-ti banca si completeaza documentele</a> <i class="fas fa-check fa-2x"></i> <i class="fas fa-times fa-2x"></i></div>
-                                        {% if firm and firm.feedback %}
+                                        {% if firm and firm.feedback and not firm.bank_documents_approved and not firm.factura_capital_approved and not firm.register_documents_approved %}
                                             <div class="feedback-firm">
                                                 Feedback-ul bancii {{ firm.bank.name }}: {{ firm.feedback }}
                                             </div>
                                         {% endif %}       
                                         <div class ="step"><a href="/capitalbanca" class="step-a" id="/capitalbanca">2. Adauga capitalul social.</a><i class="fas fa-check fa-2x"></i> <i class="fas fa-times fa-2x"></i></div>
+                                        {% if firm and firm.feedback and firm.bank_documents_approved and not firm.factura_capital_approved and not firm.register_documents_approved %}
+                                            <div class="feedback-firm">
+                                                Feedback-ul bancii {{ firm.bank.name }}: {{ firm.feedback }}
+                                            </div>
+                                        {% endif %}  
                                         <div class="step"> <a href="/registru" class="step-a" id="/registru">3. Acte registrul comertului</a><i class="fas fa-check fa-2x"></i> <i class="fas fa-times fa-2x"></i></div>           
-                                            
+                                        {% if firm and firm.feedback and firm.bank_documents_approved and firm.factura_capital_approved and not firm.register_documents_approved %}
+                                            <div class="feedback-firm">
+                                                Feedback-ul de la Registrul Comertului: {{ firm.feedback }}
+                                            </div>
+                                        {% endif %} 
                                         <div class="acte-firma" id="firm-completed"><a>Firma a fost creata cu succes! Descarca documentele firmei aici. </a></div>
                                     </div>
                                 </div>
