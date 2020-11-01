@@ -12,7 +12,9 @@ def registru_get():
 @app.route("/registru", methods=['POST'])
 def registru_post():
     firm = models.Firm.query.filter(models.Firm.user_id==current_user.id).first()
+    parts = request.form['judete'].split('/')
     firm.register_documents = request.files['completatebanca'].read()
+    firm.trade_register_id = parts[2]
     firm.feedback = None
     db.session.add(firm)
     db.session.commit()

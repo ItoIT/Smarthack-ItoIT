@@ -16,6 +16,7 @@ def firms():
         ret.append({
             "id": firm.id,
             "name": firm.name,
+            "iban": firm.iban,
             "bank_name": firm.bank.name if firm.bank else 'None',
             "trade_register_name": firm.trade_register.name if firm.trade_register else 'None',
             "bank_documents_url": flask.url_for("firm_bank_documents", id=firm.id),
