@@ -26,7 +26,7 @@
                                 <div class="text2 ">
                                     <div class = "h2">Aici ai toti pasii care trebuiesc urmati pentru a-ti deschide firma</div>
                                     <div class = "steps"> 
-                                        <div class="step"> <a href="/alegebanca" class="step-a" id="/alegebanca"> 1. Alege-ti banca si completeaza documentele</a> <i class="fas fa-check fa-2x"></i> <i class="fas fa-times fa-2x"></i></div>
+                                        <div class="step"> <a href="/alegebanca" class="step-a" id="/alegebanca"> 1. Alege-ti banca si incarca documentele</a> <i class="fas fa-check fa-2x"></i> <i class="fas fa-times fa-2x"></i></div>
                                         {% if firm and firm.feedback and not firm.bank_documents_approved and not firm.factura_capital_approved and not firm.register_documents_approved %}
                                             <div class="feedback-firm">
                                                 Feedback-ul bancii {{ firm.bank.name }}: {{ firm.feedback }}
@@ -38,8 +38,13 @@
                                                 Feedback-ul bancii {{ firm.bank.name }}: {{ firm.feedback }}
                                             </div>
                                         {% endif %}  
-                                        <div class="step"> <a href="/registru" class="step-a" id="/registru">3. Acte registrul comertului</a><i class="fas fa-check fa-2x"></i> <i class="fas fa-times fa-2x"></i></div>           
+                                        <div class="step"> <a href="/registru" class="step-a" id="/registru">3. Acte registrul comertului</a><i class="fas fa-check fa-2x"></i> <i class="fas fa-times fa-2x"></i>
+                                             
+                                        </div>   
+                                        <div><a class="optional" href = "/cardReader"> Optional pasul 3: Auto genereaza documentele cu o poza a buletinului in doar 2 minute.</a></div>
+                                               
                                         {% if firm and firm.feedback and firm.bank_documents_approved and firm.factura_capital_approved and not firm.register_documents_approved %}
+                                            
                                             <div class="feedback-firm">
                                                 Feedback-ul de la Registrul Comertului: {{ firm.feedback }}
                                             </div>

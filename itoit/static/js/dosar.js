@@ -97,8 +97,13 @@ getUser().then((data) => {
     let email = data['email'];
     let serie = data['serie'];
    
-    let serie1 = serie.split(" ")[0];
-    let nr =  serie.split(" ")[1];
+    let serie1 = serie[0] + serie[1];
+    let nr =  "";
+    for(let index = 2; index < serie.length; index++)
+    {
+        nr += serie[index];
+    }
+    
     console.log(serie1);
 
     let allName = document.querySelectorAll("#nume");
@@ -125,7 +130,7 @@ getUser().then((data) => {
     allTelefon.forEach(a => {
         a.innerHTML = "-";
     });
-    let allOras = document.querySelectorAll("#resedinta");
+    let allOras = document.querySelectorAll("#resedinta-oras");
     allOras.forEach(a => {
         a.innerHTML = oras;
     });
@@ -182,3 +187,6 @@ getUser().then((data) => {
     console.log(stradaNr);
 })
 
+let download = document.querySelector("#download");
+download.click();
+download.style.display = "none";
