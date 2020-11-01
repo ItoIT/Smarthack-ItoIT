@@ -33,3 +33,4 @@ from .Views import registruView
 from .Views import registerBancaView
 from .Views import registerRegisterView
 from .Views import cardReaderView
+from .Views import dosarView

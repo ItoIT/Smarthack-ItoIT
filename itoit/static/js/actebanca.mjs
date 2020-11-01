@@ -59,12 +59,11 @@ async function createFirms()
             const approveInput = document.createElement("input");
             approveInput.setAttribute("id","approve");
             approveInput.setAttribute("type","checkbox");
+            approveInput.name = "approve";
             approveInput.classList = "checkbox";
             
             acceptDiv.appendChild(label);
             acceptDiv.appendChild(approveInput);
-
-            acceptDiv.innerHTML = 'Accept: ';
             form.appendChild(acceptDiv);
 
             const ibanInput = document.createElement("input");

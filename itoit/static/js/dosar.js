@@ -16,3 +16,8 @@ function getUser()
             return [];
         });
 }
+
+getUser().then((data) => {
+    console.log(data);
+    let nume = data['name'];
+})
