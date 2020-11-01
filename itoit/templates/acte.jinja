@@ -27,7 +27,7 @@
                                     <div class = "h2">Aici ai toti pasii care trebuiesc urmati pentru a-ti deschide firma</div>
                                     <div class = "steps"> 
                                         <div class="step"> <a href="/alegebanca" class="step-a" id="/alegebanca"> 1. Alege-ti banca si completeaza documentele</a> <i class="fas fa-check fa-2x"></i> <i class="fas fa-times fa-2x"></i></div>
-                                        {% if firm %}
+                                        {% if firm and firm.feedback %}
                                             <div class="feedback-firm">
                                                 Feedback-ul bancii {{ firm.bank.name }}: {{ firm.feedback }}
                                             </div>
