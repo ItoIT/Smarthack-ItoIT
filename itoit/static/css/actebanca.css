@@ -1,39 +1,86 @@
-.banks-content{
-    color:black;
-    background:white;
-    padding-top: 50px;
-    padding-bottom:50px;
-    padding-left:30px;
-    padding-right:30px;
-    margin-top:16%;
-    height:auto !important;
-    border-radius:20px;
-    -webkit-box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.75);
+.banks-content {
+  color: black;
+  background: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 16%;
+  height: auto !important;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
 }
 
 .boxes {
-    display:flex;
-    flex-direction:column;
-    margin: auto;
-    background: transparent;
-    justify-content: center;
-    padding: 20px;
-  }
-.box{
-    padding-bottom:20px !important;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background: transparent;
+  justify-content: center;
+  padding: 20px;
 }
-  .download-button{
-      color:white !important;
-      margin-right:10px;
-      width:250px;
+.box {
+  padding-bottom: 20px !important;
+}
+.download-button {
+  color: white !important;
+  margin-right: 10px;
+  width: 250px;
+}
+.p-text {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: black !important;
+  font-size: 28px !important;
+  font-weight: 550;
+}
+
+@-webkit-keyframes spinner-border {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
-  .p-text{
-      padding-top:30px;
-      padding-bottom:30px;
-      color:black!important;
-      font-size:28px !important;
-      font-weight:550;
+}
+
+@keyframes spinner-border {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
-  
+}
+
+.spinner-border {
+  color: #00d9b2;
+  width: 10rem;
+  height: 10rem;
+  vertical-align: text-bottom;
+  border: 2em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  -webkit-animation: spinner-border 0.75s linear infinite;
+  animation: spinner-border 0.75s linear infinite;
+}
+
+.spinner-border-sm {
+  width: 20rem;
+  height: 20rem;
+  border-width: 1em;
+}
+
+.container-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.notification-text {
+    color: black !important;
+    font-size: 30px !important;
+}
